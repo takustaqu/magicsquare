@@ -1,6 +1,6 @@
 //transform
 
-function setTransform($el,points) {
+function setTransform($el,points,relative) {
 
 	if(!$el.attr("data-transform-origins")){
 		var origin = [
@@ -14,6 +14,15 @@ function setTransform($el,points) {
 		// console.log($el.attr("data-transform-origins"));
 		var origin = JSON.parse($el.attr("data-transform-origins"));
 	}
+
+	if(relative){
+		points[1][0] = points[1][0] + $el.width();
+		points[2][0] = points[2][0] + $el.width();
+		points[2][1] = points[2][1] + $el.height();
+		points[3][1] = points[3][1] + $el.height();
+	}
+
+	console.log(points);
 
 	/*
 		1.left-top
@@ -40,6 +49,6 @@ function setTransform($el,points) {
 	    ans.e(3) + ',' + ans.e(6) + ',1,0,' +
 	    '0,0,0,1)translateZ(1px)';
 
-	$el.css('-webkit-transform', transform);
+	$el.css({'-webkit-transform': transform,"-webkit-transform-origin":"0% 0%"});
 
 }
