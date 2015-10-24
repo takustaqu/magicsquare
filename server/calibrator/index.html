@@ -32,6 +32,12 @@
 	
 </div>
 
+<a href="#" id="player-1-open">プレーヤー1展開</a>
+<a href="#" id="player-2-open">プレーヤー2展開</a>
+
+<a href="#" id="player-1-close">プレーヤー1閉じる</a>
+<a href="#" id="player-2-close">プレーヤー2閉じる</a>
+
 <style>
 body {font-family:sans-serif;}
 	.axises {
@@ -129,8 +135,18 @@ $(".axises").each(function(){
 		
 	});
 
-	$("#cmd").click(function(){
-		s.emit("calibrate",{"payload":"foo"});
+	$("#player-1-open").click(function(){
+		s.emit("commands",{"player":"0","command":"open"});
+	});
+	$("#player-2-open").click(function(){
+		s.emit("commands",{"player":"1","command":"open"});
+	});
+
+	$("#player-1-close").click(function(){
+		s.emit("commands",{"player":"0","command":"close"});
+	})
+	$("#player-2-close").click(function(){
+		s.emit("commands",{"player":"1","command":"close"});
 	})
 
 // })

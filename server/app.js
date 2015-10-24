@@ -78,7 +78,7 @@ var io = socketio.listen(server);
 io.sockets.on("connection", function (socket) {
 
   socket.on("commands", function (data) {
-    socket.broadcast.emit("commands", {value:data});
+    socket.broadcast.emit("commands", data);
   });
 
   socket.on("calibrate", function (data) {
