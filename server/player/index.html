@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+	<script src="/lib/jquery-2.1.4.min.js"></script>
+	<script src="/lib/sylvester.js"></script>
+	<script src="/scripts/transform.js"></script>
+	<title></title>
+</head>
+<body data-screen-name="main">
+
+<div class="test" id="stage">
+	<img src="/images/test_circle.png" alt="">
+</div>
+
+<style>
+body,html {
+	margin: 0;padding: 0;
+}
+body {
+	background-color: #000;
+	width:1280px;
+	height:720px;
+}
+
+#stage {
+	width:1280px;
+	height:720px;
+	background-image: url(/images/calibrator.png);
+	background-size: contain;
+}
+</style>
+
+<script>
+
+$(function(){
+	
+	var screenName = $("body").attr("data-screen-name");
+
+	var s = io.connect('/',{transports:[ 'websocket']});
+	s.on("calibrate", function (data) {
+
+		if(screenName != data.target){
+			return false
+		}else{
+			setTransform($("#stage"),data.axises,true)
+			
+		}
+		
+	});
+
+	
+});
+	
+</script>
+	
+</body>
+</html>

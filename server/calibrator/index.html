@@ -3,24 +3,135 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<script src="jquery.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
 </head>
 <body>
+<a href="#" id="cmd">cmd</a>
+<div class="axises" data-calibrate-target="main">
+	メインプロジェクタ
+	<ul class="top-side left-side">
+		<li><span>x</span><input type="number" name="" value="0" class="left-top-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="left-top-y"></li>
+	</ul>
 
+	<ul class="top-side right-side">
+		<li><span>x</span><input type="number" name="" value="0" class="right-top-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="right-top-y"></li>
+	</ul>
+	
+	<ul class="bottom-side left-side">
+		<li><span>x</span><input type="number" name="" value="0" class="left-bottom-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="left-bottom-y"></li>
+	</ul>
+	
+	<ul class="bottom-side right-side">
+		<li><span>x</span><input type="number" name="" value="0" class="right-bottom-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="right-bottom-y"></li>
+	</ul>
+	
+</div>
+
+<style>
+body {font-family:sans-serif;}
+	.axises {
+		position: relative;
+		width:640px;
+		height:150px;
+		text-align: center;
+		line-height:150px;
+	}
+	
+
+	.axises input[type="number"]{
+		font-size:30px;
+		line-height:36px;
+		height:40px;
+		box-sizing:border-box;
+		width:4em;
+		display: inline-block;
+	}
+
+	.axises ul , .axises ul li {
+		list-style-type: none;
+		display: block;
+		margin: 0;padding: 0;
+		line-height:1em;
+	}
+
+	.axises:after {
+		position: absolute;
+		width:calc(100% - 50px);
+		height:calc(100% - 50px);
+		box-sizing:border-box;
+		top:25px;
+		left:25px;
+		border:1px dotted #EEE;
+		content:"";
+		display: block;
+	}
+
+	.axises ul {position: absolute;z-index:10;}
+	.axises ul.top-side {top:0px;}
+	.axises ul.bottom-side {bottom:0px;}
+	.axises ul.left-side {left:0px;}
+	.axises ul.right-side {right:0px;}
+	.axises ul li {width:140px;
+	display: inline-block;}
+	.axises ul li span {
+		display: inline-block;
+		height:100%;
+		margin-right:3px;
+		color:#666;
+	}
+</style>
 <script>
+// class="left-top-x"
+// class="left-top-y"
+// class="right-top-x"
+// class="right-top-y"
+// class="left-bottom-x"
+// class="left-bottom-y"
+// class="right-bottom-x"
+// class="right-bottom-y"
 
+$(".axises").each(function(){
+	var axises = [[0,0],[0,0],[0,0],[0,0]];
+
+	var $leftTopX = $(this).find(".left-top-x").eq(0),
+		$leftTopY = $(this).find(".left-top-y").eq(0),
+		$rightTopX = $(this).find(".right-top-x").eq(0),
+		$rightTopY = $(this).find(".right-top-y").eq(0),
+		$leftBottomX = $(this).find(".left-bottom-x").eq(0),
+		$leftBottomY = $(this).find(".left-bottom-y").eq(0),
+		$rightBottomX = $(this).find(".right-bottom-x").eq(0),
+		$rightBottomY = $(this).find(".right-bottom-y").eq(0);
+
+	var target = $(this).attr("data-calibrate-target")
+
+	$(this).find("input").on({"change":function(){
+		var axises = [
+					[parseInt($leftTopX.val()),parseInt($leftTopY.val())],
+					[parseInt($rightTopX.val()),parseInt($rightTopY.val())],
+					[parseInt($rightBottomX.val()),parseInt($rightBottomY.val())],
+					[parseInt($leftBottomX.val()),parseInt($leftBottomY.val())]
+				]
+
+		s.emit("calibrate",{"target":target,"axises":axises});
+		
+	}})
+})
 // $(document).ready(function(){
 
 	var s = io.connect('/',{transports:[ 'websocket']});
 
 	s.on("doflip", function () {
-		$("body").css({"background-color":"red"})
-		setTimeout(function(){
-			$("body").css({"background":""})
-		},200)
+		
 	});
+
+	$("#cmd").click(function(){
+		s.emit("calibrate",{"payload":"foo"});
+	})
 
 // })
 
