@@ -58,7 +58,7 @@ $(function(){
 	});
 	
 	s.on("commands", function (data) {
-		switch(data.command){
+		switch(data.command.toLowerCase()){
 			case "open":
 				openSquare(parseInt(data.player));
 				break;
