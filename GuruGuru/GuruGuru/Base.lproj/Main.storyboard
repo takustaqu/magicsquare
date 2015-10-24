@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Player View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="GuruGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wxH-2s-a7e">
+                                <rect key="frame" x="155" y="338" width="104" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX7-g9-2Be">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdx-tX-htb">
+                                                <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Player1"/>
+                                                <connections>
+                                                    <action selector="player1" destination="BYZ-38-t0r" eventType="touchUpInside" id="rLI-sD-yKQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKx-hx-UH3">
+                                                <rect key="frame" x="53" y="0.0" width="51" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Player2"/>
+                                                <connections>
+                                                    <action selector="player2" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nq-hM-WM1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-h3-b4z">
+                                        <rect key="frame" x="0.0" y="30" width="104" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQk-wE-V8U">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Player3"/>
+                                                <connections>
+                                                    <action selector="player3" destination="BYZ-38-t0r" eventType="touchUpInside" id="1tB-F5-KV0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKV-Nn-UCc">
+                                                <rect key="frame" x="52" y="0.0" width="52" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Player4"/>
+                                                <connections>
+                                                    <action selector="player4" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsb-CI-3Mk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uF3-43-UCo">
+                                <rect key="frame" x="177" y="434" width="60" height="30"/>
+                                <animations/>
+                                <state key="normal" title="テスト用"/>
+                                <connections>
+                                    <action selector="testPost" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAo-DN-tJa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wxH-2s-a7e" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tks-gM-2co"/>
+                            <constraint firstItem="wxH-2s-a7e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uyo-vu-Ccq"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="173"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="7Km-ij-qgd">
+            <objects>
+                <viewController id="awj-90-1x0" customClass="MainViewController" customModule="GuruGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dNW-jm-oBB"/>
+                        <viewControllerLayoutGuide type="bottom" id="xSZ-t9-8YW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xuf-0T-Shg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLn-mu-GBS">
+                                <rect key="frame" x="185" y="353" width="45" height="30"/>
+                                <animations/>
+                                <state key="normal" title="ちょき"/>
+                                <connections>
+                                    <action selector="tyoki" destination="awj-90-1x0" eventType="touchUpInside" id="9db-JF-MdG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC0-KY-ev4">
+                                <rect key="frame" x="322" y="353" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="ぱ〜"/>
+                                <connections>
+                                    <action selector="pa" destination="awj-90-1x0" eventType="touchUpInside" id="ddR-jw-dJW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lI-8P-WQf">
+                                <rect key="frame" x="60" y="353" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="ぐ〜"/>
+                                <connections>
+                                    <action selector="gu" destination="awj-90-1x0" eventType="touchUpInside" id="Efc-Eu-dUr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eho-Ww-qdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808" y="173"/>
+        </scene>
+    </scenes>
+</document>
