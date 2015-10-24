@@ -21,6 +21,7 @@ var server = http.createServer(function(request, response) {
            body +=data;
         });
         request.on('end',function(){
+            console.log(body);
            io.sockets.emit('commands',body);
         });
   }
