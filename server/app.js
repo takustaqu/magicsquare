@@ -17,10 +17,10 @@ var server = http.createServer(function(request, response) {
 
   if(request.method=='POST'){
         var body='';
-        req.on('data', function (data) {
+        request.on('data', function (data) {
            body +=data;
         });
-        req.on('end',function(){
+        request.on('end',function(){
            console.log(body);
         });
   }
