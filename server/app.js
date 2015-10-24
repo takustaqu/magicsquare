@@ -10,7 +10,8 @@ var server = http.createServer(function(request, response) {
 
   console.log(request.url);
 
-  if(request.url == "/api"){
+  if(request.url.match("/api")){
+    console.log(request.url);
     io.sockets.emit('commands','{"foo":"bar"}');
   }
 
