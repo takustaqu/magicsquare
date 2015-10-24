@@ -15,6 +15,18 @@ var server = http.createServer(function(request, response) {
     io.sockets.emit('commands','{"foo":"bar"}');
   }
 
+  if(request.method=='POST'){
+        var body='';
+        req.on('data', function (data) {
+           body +=data;
+        });
+        req.on('end',function(){
+           console.log(body);
+        });
+  }
+
+  
+
     var Response = {
         "200":function(file, filename){
             var extname = path.extname(filename);

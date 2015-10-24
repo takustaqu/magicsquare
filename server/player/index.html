@@ -10,8 +10,19 @@
 </head>
 <body data-screen-name="main">
 
-<div class="test" id="stage">
-	<img src="/images/test_circle.png" alt="">
+<div id="stage">
+
+	<div class="base player-1">
+		<div class="magicsquare rotateIn">
+			<img src="/images/type1/circle.png" alt="" class="spinning">
+		</div>
+	</div>
+	<div class="base player-2">
+		<div class="magicsquare rotateIn">
+			<img src="/images/type1/circle.png" alt="" class="spinning">
+		</div>
+	</div>
+
 </div>
 
 <style>
@@ -24,12 +35,99 @@ body {
 	height:720px;
 }
 
+
+.base {position: absolute;left:0;top:0;}
+.magicsquare img {max-width:100%;}
+
+.magicsquare {
+	width:300px;
+	height:300px;
+	margin:-150px;
+	position: absolute;
+}
 #stage {
 	width:1280px;
 	height:720px;
 	background-image: url(/images/calibrator.png);
 	background-size: contain;
+	position: relative;
 }
+
+.spinning {
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes spin {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: scale(0,0) rotate3d(0, 0, 1, -200deg);
+    transform: scale(0,0) rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  30% {
+    -webkit-transform: scale(1.1,1.1) rotate3d(0, 0, 1, 0deg);
+    transform: scale(1.1,1.1) rotate3d(0, 0, 1, 0deg);
+  }
+
+60% {
+    -webkit-transform: scale(0.9,0.9) rotate3d(0, 0, 1, 0deg);
+    transform: scale(0.9,0.9) rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: scale(0,0) rotate3d(0, 0, 1, -200deg);
+    transform: scale(0,0) rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+	30% {
+    -webkit-transform: scale(1.1,1.1) rotate3d(0, 0, 1, 0deg);
+    transform: scale(1.1,1.1) rotate3d(0, 0, 1, 0deg);
+  }
+60% {
+    -webkit-transform: scale(0.9,0.9) rotate3d(0, 0, 1, 0deg);
+    transform: scale(0.9,0.9) rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.rotateIn {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
 </style>
 
 <script>
