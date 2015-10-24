@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+</head>
+<body>
+
+<script>
+
+// $(document).ready(function(){
+
+	var s = io.connect('/',{transports:[ 'websocket']});
+
+	s.on("doflip", function () {
+		$("body").css({"background-color":"red"})
+		setTimeout(function(){
+			$("body").css({"background":""})
+		},200)
+	});
+
+// })
+
+</script>
+	
+</body>
+</html>
