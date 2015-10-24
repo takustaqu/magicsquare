@@ -38,6 +38,8 @@
 <a href="#" id="player-1-close">プレーヤー1閉じる</a>
 <a href="#" id="player-2-close">プレーヤー2閉じる</a>
 
+<a href="#" id="post-simulate">post-simulate</a>
+
 <style>
 body {font-family:sans-serif;}
 	.axises {
@@ -123,7 +125,9 @@ $(".axises").each(function(){
 					[parseInt($leftBottomX.val()),parseInt($leftBottomY.val())]
 				]
 
-		s.emit("calibrate",{"target":target,"axises":axises});
+		// s.emit("calibrate",{"target":target,"axises":axises});
+
+
 		
 	}})
 })
@@ -148,6 +152,24 @@ $(".axises").each(function(){
 	$("#player-2-close").click(function(){
 		s.emit("commands",{"player":"1","command":"close"});
 	})
+
+	$("#post-simulate").click(function(){
+		$.ajax({
+	        url: "http://localhost:3000/api/",
+	        type:'POST',
+	        dataType: 'json',
+	        data : JSON.stringify({"player":"0","command":"Open","intensity":"weak"}),
+	        timeout:10000,
+	        success: function(data) {
+	                      alert("ok");
+	        },
+	        error: function(XMLHttpRequest, textStatus, errorThrown) {
+	                     alert("error");
+	               }
+	      });
+	})
+	 
+
 
 // })
 

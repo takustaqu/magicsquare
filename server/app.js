@@ -10,10 +10,10 @@ var server = http.createServer(function(request, response) {
 
   console.log(request.url);
 
-  if(request.url.match("/api")){
-    console.log(request.url);
-    io.sockets.emit('commands','{"foo":"bar"}');
-  }
+  // if(request.url.match("/api")){
+  //   console.log(request.url);
+  //   io.sockets.emit('commands','{"foo":"bar"}');
+  // }
 
   if(request.method=='POST'){
         var body='';
@@ -22,7 +22,7 @@ var server = http.createServer(function(request, response) {
         });
         request.on('end',function(){
            console.log(body);
-           io.sockets.emit('commands',body);
+           io.sockets.emit('commands',JSON.parse(body));
         });
   }
 
