@@ -12,6 +12,19 @@ body {
 
 .base.player-1 {left:0;}
 .base.player-2 {right:0;}
+
+.base .hand {
+  width:96px;
+  height:96px;
+  margin:calc(96px * -0.5);
+  position: absolute;
+  top:50%;
+  opacity:0;
+}
+
+.base.player-1 .hand{left:98%;transform: rotate(90deg);}
+.base.player-2 .hand{right:98%;transform: rotate(-90deg)}
+
 .magicsquare img {max-width:100%;}
 
 .magicsquare {

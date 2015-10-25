@@ -73,6 +73,7 @@ $(function(){
 
 
 	var $squares = [$(".base.player-1 .magicsquare"),$(".base.player-2 .magicsquare")];
+	var $players = [$(".base.player-1"),$(".base.player-2")];
 
 	function openSquare(target){
 	  $squares[parseInt(target)].addClass("rotateIn").removeClass("rotateOut").removeClass("closed");
@@ -105,9 +106,12 @@ $(function(){
 
 	function setHandType(target,alias){
 		if(!!alias){
-			$squares[parseInt(target)].removeClass("goo choki par").addClass(alias);		
+			$squares[parseInt(target)].removeClass("goo choki par").addClass(alias);
+			console.log($players[parseInt(target)].find(".hand."+alias));	
+			$players[parseInt(target)].find(".hand."+alias).css("opacity",1)
 		}else{
 			$squares[parseInt(target)].removeClass("goo choki par");
+			$players[parseInt(target)].find(".hand").animate({"opacity":0},100);
 		}
 	}
 
