@@ -45,7 +45,7 @@ $(function(){
 	}
 
 	function setHandType(target,alias){
-		if(!alias){
+		if(!!alias){
 			$squares[parseInt(target)].removeClass("goo choki par").addClass(alias);		
 		}else{
 			$squares[parseInt(target)].removeClass("goo choki par");
