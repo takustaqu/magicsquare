@@ -18,8 +18,46 @@
 <audio src="/sounds/fx5.wav" id="sound-close"></audio>
 
 <div id="stage">
-	<!-- <img src="/images/fire-sample.jpg" alt="" style="mix-blend-mode: color-burn;position:relative;z-index:100;"> -->
-	<!-- <img src="/images/fire-effect.gif" alt="" style="mix-blend-mode: color-burn;position:relative;z-index:100;"> -->
+	
+	<div class="fx">
+		<img src="/images/fire-effect.gif" alt="" style="mix-blend-mode: lighten;position: absolute;z-index: 100;height: 1000px;width: 400px;left: 560px;top: -150px;border-radius: 268px;" class="fire">
+		<img src="/images/thunder-effect.gif" alt="" style="mix-blend-mode: lighten;position: absolute;z-index: 100;height: 900px;width: 400px;left: 460px;top: -81px;border-radius: 268px;" class="thunder">
+		<img src="/images/water-effect.gif" style="width: 320px;height: 600px;mix-blend-mode: lighten;position: absolute;z-index: 100;top: 50px;left: 520px;" class="water">
+	</div>
+	
+	<style>
+	.fx {
+		position: absolute;
+		left: -180px;
+	    width: 100%;
+	    height: 100%;
+	}
+	.fx img {
+		opacity:0;
+		transition:opacity 0.1s ease-in-out 0s;
+		transform: rotate(90deg);
+	}
+
+	.fx.fx-flip {
+		
+	}
+	.fx.fx-flip img{
+		transform:rotate(-90deg)!important;
+	}
+
+	.fx.type0 img.fire{
+		opacity:1;
+	}
+
+	.fx.type1 img.thunder{
+		opacity:1;
+	}
+
+	.fx.type2 img.water{
+		opacity:1;
+	}
+	</style>
+
 	<div class="score">
 		<ul>
 			<li class="player-1">

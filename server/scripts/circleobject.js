@@ -1,4 +1,4 @@
-
+var queing = false;
 
 $(function(){
 	
@@ -21,7 +21,7 @@ $(function(){
 	var $soundOpen= $("#sound-open");
 	var $soundClose = $("#sound-close");
 
-	var queing = false;
+	
 	s.on("commands", function (data) {
 		if(queing) return false;
 		switch(data.command.toLowerCase()){
@@ -37,6 +37,8 @@ $(function(){
 				break;
 			case "goo":
 				if(isOpened(parseInt(data.player))){
+					$(".base .magicsquare .overlay").queue([]);
+					$(".base .magicsquare .overlay").stop(); 
 					setHandType( parseInt(data.player) ,"goo");
 					jankenCue[ parseInt(data.player) ] = "goo";
 					checkDuel();
@@ -44,6 +46,9 @@ $(function(){
 				break;
 			case "choki":
 				if(isOpened(parseInt(data.player))){
+					$(".base .magicsquare .overlay").queue([]);
+					$(".base .magicsquare .overlay").stop(); 
+
 					setHandType( parseInt(data.player) ,"choki");
 					jankenCue[ parseInt(data.player) ] = "choki";
 					checkDuel();
@@ -51,6 +56,8 @@ $(function(){
 				break;
 			case "par":
 				if(isOpened(parseInt(data.player))){
+					$(".base .magicsquare .overlay").queue([]);
+					$(".base .magicsquare .overlay").stop(); 
 					setHandType( parseInt(data.player) ,"par");
 					jankenCue[ parseInt(data.player) ] = "par";
 					checkDuel();
@@ -107,7 +114,10 @@ $(function(){
 
 		if(!!jankenCue[0]&&!!jankenCue[1]){
 			var queing = true;
+			$(".score").addClass("bounce")
 			var result = duel(jankenCue[0],jankenCue[1]);
+
+			$(".fx").removeClass("type0 type1 type2 bounce fx-flip")
 			
 			console.log(jankenCue);
 			if(result != "draw"){
@@ -118,11 +128,23 @@ $(function(){
 				if(result == "player1"){
 					$(".score .player-1 .win .num").text(parseInt($(".score .player-1 .win .num").text())+1);
 					$(".score .player-2 .lose .num").text(parseInt($(".score .player-2 .lose .num").text())+1);
+					$(".score").animate({"left":"52%"},100,"swing",function(){
+						$(this).animate({"left":"50%"},100)
+					})
+					$(".fx").show().addClass("type"+Math.floor(Math.random()*2) + " bounce").css("left","-300px").animate({"left":"-100px"},200,"swing",function(){
+						$(this).fadeOut();
+					});
 				}
 
 				if(result == "player2"){
 					$(".score .player-2 .win .num").text(parseInt($(".score .player-2 .win .num").text())+1);
 					$(".score .player-1 .lose .num").text(parseInt($(".score .player-1 .lose .num").text())+1);
+					$(".score").animate({"left":"48%"},100,"swing",function(){
+						$(this).animate({"left":"50%"},100)
+					})
+					$(".fx").show().addClass("type"+Math.floor(Math.random()*2) + " bounce fx-flip").css("left","100px").animate({"left":"-200px"},200,"swing",function(){
+						$(this).fadeOut();
+					});
 				}
 
 				
@@ -143,6 +165,7 @@ $(function(){
 			
 			jankenCue = [false,false];
 		}else{
+			$(".score").removeClass("bounce")
 			return false;
 		}
 	}
