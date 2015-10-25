@@ -86,5 +86,9 @@ io.sockets.on("connection", function (socket) {
     console.log("calibrate:",data);
     socket.broadcast.emit("calibrate",data);
   });
+  socket.on("grid", function (data) {
+    console.log("grid:",data);
+    socket.broadcast.emit("grid",data);
+  });
  
 });

@@ -52,6 +52,12 @@
 <a href="#" id="player-2-choki"> player2 : チョキ</a>
 <a href="#" id="player-2-par"> player2 : パー</a>
 
+
+<hr>
+
+<a href="#" id="calibrate">
+	調整枠
+</a>
 <hr>
 
 <a href="#" id="post-simulate">post-simulate</a>
@@ -183,6 +189,10 @@ $(".axises").each(function(){
 	});
 	$("#player-2-par").click(function(){
 		s.emit("commands",{"player":"1","command":"par"});
+	});
+
+	$("#calibrate").click(function(){
+		s.emit("grid","true");
 	});
 
 	$("#post-simulate").click(function(){

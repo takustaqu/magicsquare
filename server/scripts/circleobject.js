@@ -14,6 +14,10 @@ $(function(){
 		}
 	});
 
+	$("body").click(function(){
+		$("body").toggleClass("calibrateGrid");
+	})
+
 	var jankenCue = [false,false];
 
 	var $soundBlast = $("#sound-blast");
@@ -82,10 +86,21 @@ $(function(){
 	}
 
 	function closeSquare(target){
-	  $squares[parseInt(target)].removeClass("rotateIn").addClass("rotateOut");
-	  $soundClose.get(0).pause();
-	$soundClose.get(0).currentTime = 0;
-	$soundClose.get(0).play();
+		console.log("close")
+		$squares[parseInt(target)].removeClass("rotateIn").addClass("rotateOut");
+		
+		if(parseInt(target)==0){
+			$(".score .player-1 .win .num").text("0");
+			$(".score .player-1 .lose .num").text("0");
+		}else{
+			$(".score .player-2 .win .num").text("0");
+			$(".score .player-2 .lose .num").text("0");
+		}
+		
+		$soundClose.get(0).pause();
+		$soundClose.get(0).currentTime = 0;
+		$soundClose.get(0).play();
+
 	}
 
 	function setHandType(target,alias){
