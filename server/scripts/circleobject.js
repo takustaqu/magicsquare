@@ -17,9 +17,12 @@ $(function(){
 
 	var $soundBlast = $("#sound-blast");
 	var $soundGuard = $("#sound-tie");
+	var $soundOpen= $("#sound-open");
+	var $soundClose = $("#sound-close");
 
-	
+	var queing = false;
 	s.on("commands", function (data) {
+		if(queing) return false;
 		switch(data.command.toLowerCase()){
 			default:
 				var player = parseInt(data.player);
@@ -61,6 +64,9 @@ $(function(){
 
 	function openSquare(target){
 	  $squares[parseInt(target)].addClass("rotateIn").removeClass("rotateOut").removeClass("closed");
+	  $soundOpen.get(0).pause();
+	$soundOpen.get(0).currentTime = 0;
+	$soundOpen.get(0).play();
 	}
 
 	function isOpened(target){
@@ -69,6 +75,9 @@ $(function(){
 
 	function closeSquare(target){
 	  $squares[parseInt(target)].removeClass("rotateIn").addClass("rotateOut");
+	  $soundClose.get(0).pause();
+	$soundClose.get(0).currentTime = 0;
+	$soundClose.get(0).play();
 	}
 
 	function setHandType(target,alias){
@@ -96,6 +105,7 @@ $(function(){
 	function checkDuel(){
 
 		if(!!jankenCue[0]&&!!jankenCue[1]){
+			var queing = true;
 			var result = duel(jankenCue[0],jankenCue[1]);
 			
 			console.log(jankenCue);
@@ -103,11 +113,32 @@ $(function(){
 				$soundBlast.get(0).pause();
 				$soundBlast.get(0).currentTime = 0;
 				$soundBlast.get(0).play();
+				
+				if(result == "player1"){
+					$(".score .player-1 .win .num").text(parseInt($(".score .player-1 .win .num").text())+1);
+					$(".score .player-2 .lose .num").text(parseInt($(".score .player-2 .lose .num").text())+1);
+				}
+
+				if(result == "player2"){
+					$(".score .player-2 .win .num").text(parseInt($(".score .player-2 .win .num").text())+1);
+					$(".score .player-1 .lose .num").text(parseInt($(".score .player-1 .lose .num").text())+1);
+				}
+
+				
 			}else{
+				$soundGuard.get(0).pause();
 				$soundGuard.get(0).currentTime = 0;
 				$soundGuard.get(0).play();
 				
 			}
+			setTimeout(function(){
+				$(".base .magicsquare .overlay").animate({"opacity":0},"slow",function(){
+					setHandType(0,false);
+					setHandType(1,false);
+					$(this).css({"opacity":1});
+					queing = false;
+				})
+			},1500)
 			
 			jankenCue = [false,false];
 		}else{

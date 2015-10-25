@@ -225,7 +225,7 @@ body {
 
 }
 
-.score li {font-size:38px;width:200px;height:90px;position: absolute;margin:0 -100px;}
+.score li {font-size:50px;width:200px;height:90px;position: absolute;margin:0 -100px;}
 .score li .fa {
   font-size:90%;margin-right:0.3em;
 }
