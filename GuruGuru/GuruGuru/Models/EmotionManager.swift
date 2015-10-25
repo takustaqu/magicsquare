@@ -27,12 +27,12 @@ final class EmotionManager: NSObject {
     //MARK: private
     private var waiting = false
     
-    private let friq = 0.1 // 計測周期
-    private let waitingTime = 20// 変化の時間（5s）
+    private let friq = 0.3 // 計測周期
+    private let waitingTime = 8// 変化の時間（5s）
     private var waitingCounter = 0;
     
-    private let weakCount = 1.5;
-    private let normalCount = 2.0;
+    private let weakCount = 1.0;
+    private let normalCount = 1.8;
     private let strongcount = 2.5;
     
     private var xRawData : Double = 0
@@ -86,20 +86,24 @@ final class EmotionManager: NSObject {
             }
             if(self.waiting == false) // no wait
             {
-                if((self.xRawData < -self.weakCount || self.weakCount < self.xRawData))
+                if((self.xRawData < -self.strongcount || self.strongcount < self.xRawData))
                 {
-                    self.changeCommand(.weak)
+                    self.changeCommand(.strong)
+                    self.waiting = true
+                    self.waitingCounter = 0
                 }
                 else if((self.xRawData < -self.normalCount || self.normalCount < self.xRawData))
                 {
                     self.changeCommand(.normal)
+                    self.waiting = true
+                    self.waitingCounter = 0
                 }
-                else if((self.xRawData < -self.strongcount || self.strongcount < self.xRawData))
+                else if((self.xRawData < -self.weakCount || self.weakCount < self.xRawData))
                 {
-                    self.changeCommand(.strong)
+                    self.changeCommand(.weak)
+                    self.waiting = true
+                    self.waitingCounter = 0
                 }
-                self.waiting = true
-                self.waitingCounter = 0
             }
             if(self.waitingTime < self.waitingCounter)
             {
