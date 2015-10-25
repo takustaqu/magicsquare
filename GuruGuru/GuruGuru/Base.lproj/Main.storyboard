@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-7H-qcF">
-                                <rect key="frame" x="54" y="186" width="80" height="80"/>
+                                <rect key="frame" x="52" y="192" width="80" height="80"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="10e-nw-eNY"/>
-                                    <constraint firstAttribute="height" constant="80" id="Tb2-kd-W9v"/>
+                                    <constraint firstAttribute="width" constant="80" id="1pN-uG-6Zw"/>
+                                    <constraint firstAttribute="height" constant="80" id="KBa-2w-kfc"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icon_goo"/>
                                 <connections>
@@ -31,11 +30,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gv-dd-Vc0">
-                                <rect key="frame" x="159" y="262" width="97" height="82"/>
+                                <rect key="frame" x="159" y="253" width="80" height="80"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="L7Y-Gi-T3h"/>
-                                    <constraint firstAttribute="width" constant="97" id="c3O-cY-buh"/>
+                                    <constraint firstAttribute="height" constant="80" id="Kfk-SR-2gj"/>
+                                    <constraint firstAttribute="width" constant="80" id="mVm-v3-UEq"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icon_choki"/>
                                 <connections>
@@ -45,9 +44,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK1-zc-jiV">
                                 <rect key="frame" x="187" y="698" width="45" height="30"/>
                                 <animations/>
-                                <state key="normal" title="やめる"/>
+                                <state key="normal" title="終わる"/>
                                 <connections>
-                                    <action selector="logOut" destination="BYZ-38-t0r" eventType="touchUpInside" id="mRN-ph-eQQ"/>
+                                    <action selector="logOut" destination="BYZ-38-t0r" eventType="touchUpInside" id="82Z-Lo-3jO"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="47s-ya-IQh">
@@ -59,11 +58,11 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax1-lS-1HL">
-                                <rect key="frame" x="280" y="189" width="80" height="74"/>
+                                <rect key="frame" x="282" y="192" width="80" height="80"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="ZNu-3z-80O"/>
-                                    <constraint firstAttribute="width" constant="80" id="ul5-h9-Slr"/>
+                                    <constraint firstAttribute="height" constant="80" id="IE6-9i-e8L"/>
+                                    <constraint firstAttribute="width" constant="80" id="koL-ak-1dK"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="icon_per"/>
                                 <connections>
@@ -74,19 +73,19 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aK1-zc-jiV" secondAttribute="bottom" constant="8" id="09P-kg-z5U"/>
-                            <constraint firstItem="47s-ya-IQh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E50-H1-3q1"/>
-                            <constraint firstItem="8Gv-dd-Vc0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JEE-Bb-UzP"/>
-                            <constraint firstItem="pcH-7H-qcF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="VA7-6K-GeH"/>
-                            <constraint firstItem="aK1-zc-jiV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nP2-n8-RQD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ax1-lS-1HL" secondAttribute="trailing" constant="34" id="yHE-vd-JvW"/>
+                            <constraint firstItem="47s-ya-IQh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3uz-y1-6e4"/>
+                            <constraint firstItem="aK1-zc-jiV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B9r-A0-dhn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aK1-zc-jiV" secondAttribute="bottom" constant="8" id="b73-xq-eUa"/>
+                            <constraint firstItem="8Gv-dd-Vc0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pGE-pv-4DC"/>
+                            <constraint firstItem="pcH-7H-qcF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="y6N-Pe-IDS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ax1-lS-1HL" secondAttribute="trailing" constant="32" id="yMZ-o6-VGt"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="chokiButton" destination="8Gv-dd-Vc0" id="o5s-NO-dmM"/>
-                        <outlet property="guButton" destination="pcH-7H-qcF" id="lWD-5I-f0B"/>
-                        <outlet property="parButton" destination="ax1-lS-1HL" id="Zrm-ye-ksz"/>
+                        <outlet property="chokiButton" destination="8Gv-dd-Vc0" id="BRl-IJ-XwF"/>
+                        <outlet property="guButton" destination="pcH-7H-qcF" id="1Ds-Bi-9P3"/>
+                        <outlet property="parButton" destination="ax1-lS-1HL" id="lQe-aX-yU6"/>
                         <outlet property="segmentControl" destination="47s-ya-IQh" id="lQK-lS-eTE"/>
                     </connections>
                 </viewController>
@@ -96,8 +95,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_choki" width="500" height="500"/>
-        <image name="icon_goo" width="500" height="500"/>
-        <image name="icon_per" width="500" height="500"/>
+        <image name="icon_choki" width="1000" height="1000"/>
+        <image name="icon_goo" width="1000" height="1000"/>
+        <image name="icon_per" width="1000" height="1000"/>
     </resources>
 </document>

@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EB4C6B901C9D5AA9DE097F5 /* Pods_GuruGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C1A1868DB6EECAE55F0DA9 /* Pods_GuruGuru.framework */; };
+		40294AE11BDB47A10005DFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294AE01BDB47A10005DFBE /* AppDelegate.swift */; };
+		40294AE31BDB47A10005DFBE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294AE21BDB47A10005DFBE /* PlayerViewController.swift */; };
+		40294AE61BDB47A10005DFBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40294AE41BDB47A10005DFBE /* Main.storyboard */; };
+		40294AE81BDB47A10005DFBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40294AE71BDB47A10005DFBE /* Assets.xcassets */; };
+		40294AEB1BDB47A10005DFBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40294AE91BDB47A10005DFBE /* LaunchScreen.storyboard */; };
+		40294AF61BDB47A10005DFBE /* GuruGuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294AF51BDB47A10005DFBE /* GuruGuruTests.swift */; };
+		40294B011BDB47A10005DFBE /* GuruGuruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294B001BDB47A10005DFBE /* GuruGuruUITests.swift */; };
+		40294B121BDB48E90005DFBE /* EmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294B111BDB48E90005DFBE /* EmotionManager.swift */; settings = {ASSET_TAGS = (); }; };
+		40294B141BDB5EC80005DFBE /* magic-flame1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40294B131BDB5EC80005DFBE /* magic-flame1.mp3 */; settings = {ASSET_TAGS = (); }; };
+		4060E4771BDC999F00EF08A3 /* voice-berserk01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46C1BDC999F00EF08A3 /* voice-berserk01.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E4781BDC999F00EF08A3 /* voice-berserk03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46D1BDC999F00EF08A3 /* voice-berserk03.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E4791BDC999F00EF08A3 /* voice-berserk04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46E1BDC999F00EF08A3 /* voice-berserk04.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E47A1BDC999F00EF08A3 /* voice-hanyou-C03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46F1BDC999F00EF08A3 /* voice-hanyou-C03.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E47B1BDC999F00EF08A3 /* voice-hanyou01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4701BDC999F00EF08A3 /* voice-hanyou01.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E47C1BDC999F00EF08A3 /* voice-hanyou02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4711BDC999F00EF08A3 /* voice-hanyou02.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E47D1BDC999F00EF08A3 /* voice-magic-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4721BDC999F00EF08A3 /* voice-magic-01.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E47E1BDC999F00EF08A3 /* voice-magic-earth01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4731BDC999F00EF08A3 /* voice-magic-earth01.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E47F1BDC999F00EF08A3 /* voice-magic-fire01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4741BDC999F00EF08A3 /* voice-magic-fire01.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E4801BDC999F00EF08A3 /* voice-magic-ice01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4751BDC999F00EF08A3 /* voice-magic-ice01.wav */; settings = {ASSET_TAGS = (); }; };
+		4060E4811BDC999F00EF08A3 /* voice-magic-wind01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4761BDC999F00EF08A3 /* voice-magic-wind01.wav */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40294AF21BDB47A10005DFBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40294AD51BDB47A10005DFBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40294ADC1BDB47A10005DFBE;
+			remoteInfo = GuruGuru;
+		};
+		40294AFD1BDB47A10005DFBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40294AD51BDB47A10005DFBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40294ADC1BDB47A10005DFBE;
+			remoteInfo = GuruGuru;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40294ADD1BDB47A10005DFBE /* GuruGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuruGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40294AE01BDB47A10005DFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		40294AE21BDB47A10005DFBE /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = Controllers/PlayerViewController.swift; sourceTree = "<group>"; };
+		40294AE51BDB47A10005DFBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40294AE71BDB47A10005DFBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40294AEA1BDB47A10005DFBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		40294AEC1BDB47A10005DFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40294AF11BDB47A10005DFBE /* GuruGuruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuruGuruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40294AF51BDB47A10005DFBE /* GuruGuruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuruGuruTests.swift; sourceTree = "<group>"; };
+		40294AF71BDB47A10005DFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40294AFC1BDB47A10005DFBE /* GuruGuruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuruGuruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40294B001BDB47A10005DFBE /* GuruGuruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuruGuruUITests.swift; sourceTree = "<group>"; };
+		40294B021BDB47A10005DFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40294B111BDB48E90005DFBE /* EmotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmotionManager.swift; path = Models/EmotionManager.swift; sourceTree = "<group>"; };
+		40294B131BDB5EC80005DFBE /* magic-flame1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "magic-flame1.mp3"; sourceTree = "<group>"; };
+		4060E46C1BDC999F00EF08A3 /* voice-berserk01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-berserk01.wav"; path = "GuruGuru/voice-berserk01.wav"; sourceTree = "<group>"; };
+		4060E46D1BDC999F00EF08A3 /* voice-berserk03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-berserk03.wav"; path = "GuruGuru/voice-berserk03.wav"; sourceTree = "<group>"; };
+		4060E46E1BDC999F00EF08A3 /* voice-berserk04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-berserk04.wav"; path = "GuruGuru/voice-berserk04.wav"; sourceTree = "<group>"; };
+		4060E46F1BDC999F00EF08A3 /* voice-hanyou-C03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-hanyou-C03.wav"; path = "GuruGuru/voice-hanyou-C03.wav"; sourceTree = "<group>"; };
+		4060E4701BDC999F00EF08A3 /* voice-hanyou01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-hanyou01.wav"; path = "GuruGuru/voice-hanyou01.wav"; sourceTree = "<group>"; };
+		4060E4711BDC999F00EF08A3 /* voice-hanyou02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-hanyou02.wav"; path = "GuruGuru/voice-hanyou02.wav"; sourceTree = "<group>"; };
+		4060E4721BDC999F00EF08A3 /* voice-magic-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-01.wav"; path = "GuruGuru/voice-magic-01.wav"; sourceTree = "<group>"; };
+		4060E4731BDC999F00EF08A3 /* voice-magic-earth01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-earth01.wav"; path = "GuruGuru/voice-magic-earth01.wav"; sourceTree = "<group>"; };
+		4060E4741BDC999F00EF08A3 /* voice-magic-fire01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-fire01.wav"; path = "GuruGuru/voice-magic-fire01.wav"; sourceTree = "<group>"; };
+		4060E4751BDC999F00EF08A3 /* voice-magic-ice01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-ice01.wav"; path = "GuruGuru/voice-magic-ice01.wav"; sourceTree = "<group>"; };
+		4060E4761BDC999F00EF08A3 /* voice-magic-wind01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-wind01.wav"; path = "GuruGuru/voice-magic-wind01.wav"; sourceTree = "<group>"; };
+		40C1A1868DB6EECAE55F0DA9 /* Pods_GuruGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuruGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		483F4B249FEC10982EEECE0A /* Pods-GuruGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuruGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuruGuru/Pods-GuruGuru.debug.xcconfig"; sourceTree = "<group>"; };
+		EB53BCDF61B38497575B7818 /* Pods-GuruGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuruGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuruGuru/Pods-GuruGuru.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40294ADA1BDB47A10005DFBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB4C6B901C9D5AA9DE097F5 /* Pods_GuruGuru.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40294AEE1BDB47A10005DFBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40294AF91BDB47A10005DFBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D0C3EA0288BBAF51D52C676 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				483F4B249FEC10982EEECE0A /* Pods-GuruGuru.debug.xcconfig */,
+				EB53BCDF61B38497575B7818 /* Pods-GuruGuru.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		40294AD41BDB47A00005DFBE = {
+			isa = PBXGroup;
+			children = (
+				4060E46C1BDC999F00EF08A3 /* voice-berserk01.wav */,
+				4060E46D1BDC999F00EF08A3 /* voice-berserk03.wav */,
+				4060E46E1BDC999F00EF08A3 /* voice-berserk04.wav */,
+				4060E46F1BDC999F00EF08A3 /* voice-hanyou-C03.wav */,
+				4060E4701BDC999F00EF08A3 /* voice-hanyou01.wav */,
+				4060E4711BDC999F00EF08A3 /* voice-hanyou02.wav */,
+				4060E4721BDC999F00EF08A3 /* voice-magic-01.wav */,
+				4060E4731BDC999F00EF08A3 /* voice-magic-earth01.wav */,
+				4060E4741BDC999F00EF08A3 /* voice-magic-fire01.wav */,
+				4060E4751BDC999F00EF08A3 /* voice-magic-ice01.wav */,
+				4060E4761BDC999F00EF08A3 /* voice-magic-wind01.wav */,
+				40294ADF1BDB47A10005DFBE /* GuruGuru */,
+				40294AF41BDB47A10005DFBE /* GuruGuruTests */,
+				40294AFF1BDB47A10005DFBE /* GuruGuruUITests */,
+				40294ADE1BDB47A10005DFBE /* Products */,
+				40294B131BDB5EC80005DFBE /* magic-flame1.mp3 */,
+				2D0C3EA0288BBAF51D52C676 /* Pods */,
+				6BD0C1D978CE3CC50992223F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		40294ADE1BDB47A10005DFBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40294ADD1BDB47A10005DFBE /* GuruGuru.app */,
+				40294AF11BDB47A10005DFBE /* GuruGuruTests.xctest */,
+				40294AFC1BDB47A10005DFBE /* GuruGuruUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40294ADF1BDB47A10005DFBE /* GuruGuru */ = {
+			isa = PBXGroup;
+			children = (
+				40294B101BDB48DB0005DFBE /* Models */,
+				40294B0F1BDB48D10005DFBE /* Views */,
+				40294B0E1BDB48CA0005DFBE /* Controllers */,
+				40294AE01BDB47A10005DFBE /* AppDelegate.swift */,
+				40294AE41BDB47A10005DFBE /* Main.storyboard */,
+				40294AE71BDB47A10005DFBE /* Assets.xcassets */,
+				40294AE91BDB47A10005DFBE /* LaunchScreen.storyboard */,
+				40294AEC1BDB47A10005DFBE /* Info.plist */,
+			);
+			path = GuruGuru;
+			sourceTree = "<group>";
+		};
+		40294AF41BDB47A10005DFBE /* GuruGuruTests */ = {
+			isa = PBXGroup;
+			children = (
+				40294AF51BDB47A10005DFBE /* GuruGuruTests.swift */,
+				40294AF71BDB47A10005DFBE /* Info.plist */,
+			);
+			path = GuruGuruTests;
+			sourceTree = "<group>";
+		};
+		40294AFF1BDB47A10005DFBE /* GuruGuruUITests */ = {
+			isa = PBXGroup;
+			children = (
+				40294B001BDB47A10005DFBE /* GuruGuruUITests.swift */,
+				40294B021BDB47A10005DFBE /* Info.plist */,
+			);
+			path = GuruGuruUITests;
+			sourceTree = "<group>";
+		};
+		40294B0E1BDB48CA0005DFBE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40294AE21BDB47A10005DFBE /* PlayerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		40294B0F1BDB48D10005DFBE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		40294B101BDB48DB0005DFBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40294B111BDB48E90005DFBE /* EmotionManager.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6BD0C1D978CE3CC50992223F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40C1A1868DB6EECAE55F0DA9 /* Pods_GuruGuru.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40294ADC1BDB47A10005DFBE /* GuruGuru */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40294B051BDB47A10005DFBE /* Build configuration list for PBXNativeTarget "GuruGuru" */;
+			buildPhases = (
+				5D2C291672E8D45BFD20AABF /* Check Pods Manifest.lock */,
+				40294AD91BDB47A10005DFBE /* Sources */,
+				40294ADA1BDB47A10005DFBE /* Frameworks */,
+				40294ADB1BDB47A10005DFBE /* Resources */,
+				39C2FA2150C719A94CB0B422 /* Embed Pods Frameworks */,
+				E253D2B802D11A5C6B80650E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuruGuru;
+			productName = GuruGuru;
+			productReference = 40294ADD1BDB47A10005DFBE /* GuruGuru.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40294AF01BDB47A10005DFBE /* GuruGuruTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40294B081BDB47A10005DFBE /* Build configuration list for PBXNativeTarget "GuruGuruTests" */;
+			buildPhases = (
+				40294AED1BDB47A10005DFBE /* Sources */,
+				40294AEE1BDB47A10005DFBE /* Frameworks */,
+				40294AEF1BDB47A10005DFBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40294AF31BDB47A10005DFBE /* PBXTargetDependency */,
+			);
+			name = GuruGuruTests;
+			productName = GuruGuruTests;
+			productReference = 40294AF11BDB47A10005DFBE /* GuruGuruTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		40294AFB1BDB47A10005DFBE /* GuruGuruUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40294B0B1BDB47A10005DFBE /* Build configuration list for PBXNativeTarget "GuruGuruUITests" */;
+			buildPhases = (
+				40294AF81BDB47A10005DFBE /* Sources */,
+				40294AF91BDB47A10005DFBE /* Frameworks */,
+				40294AFA1BDB47A10005DFBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40294AFE1BDB47A10005DFBE /* PBXTargetDependency */,
+			);
+			name = GuruGuruUITests;
+			productName = GuruGuruUITests;
+			productReference = 40294AFC1BDB47A10005DFBE /* GuruGuruUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40294AD51BDB47A10005DFBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "山本　恭大";
+				TargetAttributes = {
+					40294ADC1BDB47A10005DFBE = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					40294AF01BDB47A10005DFBE = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 40294ADC1BDB47A10005DFBE;
+					};
+					40294AFB1BDB47A10005DFBE = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 40294ADC1BDB47A10005DFBE;
+					};
+				};
+			};
+			buildConfigurationList = 40294AD81BDB47A10005DFBE /* Build configuration list for PBXProject "GuruGuru" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 40294AD41BDB47A00005DFBE;
+			productRefGroup = 40294ADE1BDB47A10005DFBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40294ADC1BDB47A10005DFBE /* GuruGuru */,
+				40294AF01BDB47A10005DFBE /* GuruGuruTests */,
+				40294AFB1BDB47A10005DFBE /* GuruGuruUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40294ADB1BDB47A10005DFBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4060E47F1BDC999F00EF08A3 /* voice-magic-fire01.wav in Resources */,
+				4060E47D1BDC999F00EF08A3 /* voice-magic-01.wav in Resources */,
+				4060E47E1BDC999F00EF08A3 /* voice-magic-earth01.wav in Resources */,
+				40294AEB1BDB47A10005DFBE /* LaunchScreen.storyboard in Resources */,
+				4060E4781BDC999F00EF08A3 /* voice-berserk03.wav in Resources */,
+				4060E47A1BDC999F00EF08A3 /* voice-hanyou-C03.wav in Resources */,
+				4060E47C1BDC999F00EF08A3 /* voice-hanyou02.wav in Resources */,
+				40294AE81BDB47A10005DFBE /* Assets.xcassets in Resources */,
+				4060E4811BDC999F00EF08A3 /* voice-magic-wind01.wav in Resources */,
+				4060E4801BDC999F00EF08A3 /* voice-magic-ice01.wav in Resources */,
+				4060E4791BDC999F00EF08A3 /* voice-berserk04.wav in Resources */,
+				4060E4771BDC999F00EF08A3 /* voice-berserk01.wav in Resources */,
+				4060E47B1BDC999F00EF08A3 /* voice-hanyou01.wav in Resources */,
+				40294B141BDB5EC80005DFBE /* magic-flame1.mp3 in Resources */,
+				40294AE61BDB47A10005DFBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40294AEF1BDB47A10005DFBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40294AFA1BDB47A10005DFBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39C2FA2150C719A94CB0B422 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuruGuru/Pods-GuruGuru-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D2C291672E8D45BFD20AABF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E253D2B802D11A5C6B80650E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuruGuru/Pods-GuruGuru-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40294AD91BDB47A10005DFBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40294AE31BDB47A10005DFBE /* PlayerViewController.swift in Sources */,
+				40294AE11BDB47A10005DFBE /* AppDelegate.swift in Sources */,
+				40294B121BDB48E90005DFBE /* EmotionManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40294AED1BDB47A10005DFBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40294AF61BDB47A10005DFBE /* GuruGuruTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40294AF81BDB47A10005DFBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40294B011BDB47A10005DFBE /* GuruGuruUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40294AF31BDB47A10005DFBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40294ADC1BDB47A10005DFBE /* GuruGuru */;
+			targetProxy = 40294AF21BDB47A10005DFBE /* PBXContainerItemProxy */;
+		};
+		40294AFE1BDB47A10005DFBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40294ADC1BDB47A10005DFBE /* GuruGuru */;
+			targetProxy = 40294AFD1BDB47A10005DFBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40294AE41BDB47A10005DFBE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40294AE51BDB47A10005DFBE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		40294AE91BDB47A10005DFBE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40294AEA1BDB47A10005DFBE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40294B031BDB47A10005DFBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		40294B041BDB47A10005DFBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40294B061BDB47A10005DFBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 483F4B249FEC10982EEECE0A /* Pods-GuruGuru.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuruGuru/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuru;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40294B071BDB47A10005DFBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB53BCDF61B38497575B7818 /* Pods-GuruGuru.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GuruGuru/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuru;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		40294B091BDB47A10005DFBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuruGuruTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuruTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuruGuru.app/GuruGuru";
+			};
+			name = Debug;
+		};
+		40294B0A1BDB47A10005DFBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GuruGuruTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuruTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuruGuru.app/GuruGuru";
+			};
+			name = Release;
+		};
+		40294B0C1BDB47A10005DFBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuruGuruUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuruUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuruGuru;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		40294B0D1BDB47A10005DFBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GuruGuruUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuruUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GuruGuru;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40294AD81BDB47A10005DFBE /* Build configuration list for PBXProject "GuruGuru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40294B031BDB47A10005DFBE /* Debug */,
+				40294B041BDB47A10005DFBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40294B051BDB47A10005DFBE /* Build configuration list for PBXNativeTarget "GuruGuru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40294B061BDB47A10005DFBE /* Debug */,
+				40294B071BDB47A10005DFBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40294B081BDB47A10005DFBE /* Build configuration list for PBXNativeTarget "GuruGuruTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40294B091BDB47A10005DFBE /* Debug */,
+				40294B0A1BDB47A10005DFBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40294B0B1BDB47A10005DFBE /* Build configuration list for PBXNativeTarget "GuruGuruUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40294B0C1BDB47A10005DFBE /* Debug */,
+				40294B0D1BDB47A10005DFBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40294AD51BDB47A10005DFBE /* Project object */;
+}

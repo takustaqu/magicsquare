@@ -87,6 +87,15 @@ class PlayerViewController: UIViewController{
                 self.player?.play()
             }
             
+            if(self.commandString == "goo" || self.commandString == "choki" || self.commandString == "par")
+            {
+                self.commandString = "open"
+                
+                self.guButton.enabled = true;
+                self.chokiButton.enabled = true;
+                self.parButton.enabled = true;
+                
+            }
         }
         self.manager?.start()
     }
@@ -191,7 +200,7 @@ class PlayerViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
