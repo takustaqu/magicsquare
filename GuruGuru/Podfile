@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+platform :ios, '9.0'
+
+target 'GuruGuru' do
+ pod 'Alamofire'
+end
+
+target 'GuruGuru' do
+ 
+end
