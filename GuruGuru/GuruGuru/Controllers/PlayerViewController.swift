@@ -14,14 +14,25 @@ class PlayerViewController: UIViewController{
     
     @IBOutlet weak private var segmentControl : UISegmentedControl!
     
+    @IBOutlet weak private var guButton : UIButton!
+    @IBOutlet weak private var chokiButton : UIButton!
+    @IBOutlet weak private var parButton : UIButton!
+    
     private var manager : EmotionManager? = EmotionManager.instance
     private var channel = -1
-    private var commandString = "Open"
+    private var commandString = "open"
+    
+    private var boisArray:[String] = ["voice-magic-01","voice-magic-earth01","voice-magic-fire01","voice-magic-ice01","voice-magic-wind01","voice-hanyou01","voice-hanyou-C03","voice-hanyou02","voice-berserk01","voice-berserk03","voice-berserk04"]
     
     private var player :AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.guButton.enabled = false;
+        self.chokiButton.enabled = false;
+        self.parButton.enabled = false;
+        
         var intency = ""
         // Do any additional setup after loading the view, typically from a nib.
         self.manager?.changeCommand = { command in
@@ -29,41 +40,14 @@ class PlayerViewController: UIViewController{
             {
             case .normal:
                 intency = "normal"
-                let urlString = NSBundle.mainBundle().pathForResource("magic-flame1", ofType: "mp3")
-                let url:NSURL  = NSURL.fileURLWithPath(urlString!)
-                
-                do {
-                    try self.player =  AVAudioPlayer(contentsOfURL: url)
-                } catch {
-                    //Handle the error
-                }
-                self.player?.play()
                 print("normal")
                 break
             case .weak:
                 intency = "weak"
-                let urlString = NSBundle.mainBundle().pathForResource("magic-flame1", ofType: "mp3")
-                let url:NSURL  = NSURL.fileURLWithPath(urlString!)
-                
-                do {
-                    try self.player =  AVAudioPlayer(contentsOfURL: url)
-                } catch {
-                    //Handle the error
-                }
-                self.player?.play()
                 print("weak")
                 break
             case .strong:
                 intency = "strong"
-                let urlString = NSBundle.mainBundle().pathForResource("magic-flame1", ofType: "mp3")
-                let url:NSURL  = NSURL.fileURLWithPath(urlString!)
-                
-                do {
-                    try self.player =  AVAudioPlayer(contentsOfURL: url)
-                } catch {
-                    //Handle the error
-                }
-                self.player?.play()
                 print("strong")
                 break
             default:
@@ -72,7 +56,7 @@ class PlayerViewController: UIViewController{
             if(self.commandString != "" ||  self.channel != -1)
             {
                 let parameters = [
-                    "player": "\(self.channel)",
+                    "player": "\(self.segmentControl.selectedSegmentIndex)",
                     "command": "\(self.commandString)",
                     "intensity":"\(intency)"
                 ]
@@ -80,7 +64,27 @@ class PlayerViewController: UIViewController{
                     .responseJSON { response in
                         print("\(response)")
                 }
-                if()
+            }
+            
+            if(self.commandString == "open")
+            {
+                self.guButton.enabled = true;
+                self.chokiButton.enabled = true;
+                self.parButton.enabled = true;
+                
+                self.segmentControl.enabled = false;
+                let randData:Int = Int(arc4random() % 11)
+                print("\(self.boisArray[randData])")
+                let urlString = NSBundle.mainBundle().pathForResource(self.boisArray[randData], ofType: "wav")
+                
+                let url:NSURL  = NSURL.fileURLWithPath(urlString!)
+                
+                do {
+                    try self.player =  AVAudioPlayer(contentsOfURL: url)
+                } catch {
+                    //Handle the error
+                }
+                self.player?.play()
             }
             
         }
@@ -90,7 +94,7 @@ class PlayerViewController: UIViewController{
     @IBAction private func player1()
     {
         self.channel = 0
-        
+        print("\(self.segmentControl.selectedSegmentIndex)")
         let parameters = [
             "player": "\(self.channel)",
             "command": "Open",
@@ -132,47 +136,56 @@ class PlayerViewController: UIViewController{
     
     @IBAction private func gu()
     {
-        self.commandString = "Goo"
+        self.commandString = "goo"
+        self.chokiButton.enabled = false;
+        self.parButton.enabled = false;
     }
     
     @IBAction private func choki()
     {
-        self.commandString = "Choki"
+        self.commandString = "choki"
+        self.guButton.enabled = false;
+        self.parButton.enabled = false;
     }
     
     @IBAction private func pa()
     {
-        self.commandString = "Par"
+        self.commandString = "par"
+        self.chokiButton.enabled = false;
+        self.guButton.enabled = false;
     }
     
     @IBAction private func sneak()
     {
-        self.commandString = "Sneak"
+        self.commandString = "sneak"
     }
     
     @IBAction private func spock()
     {
-        self.commandString = "Spock"
+        self.commandString = "spock"
     }
     
-    
-    @IBAction private func testPost()
+    @IBAction private func logOut()
     {
-        let parameters = [
-            "target": "objectName",
-            "baz": ["a", 1],
-            "payload": [
-                "arg1": "param",
-                "arg2": "param",
-                "arg3": "param"
-            ]
-        ]
         
-        Alamofire.request(.POST, "http://magicrune.cloudapp.net/api", parameters: parameters , encoding:.JSON)
+        self.guButton.enabled = false;
+        self.chokiButton.enabled = false;
+        self.parButton.enabled = false;
+        
+        self.segmentControl.enabled = true;
+        
+        let parameters = [
+            "player": "\(self.segmentControl.selectedSegmentIndex)",
+            "command": "close",
+            "intensity":"weak"
+        ]
+        Alamofire.request(.POST, "http://magicrune.cloudapp.net/api", parameters: parameters, encoding: .JSON)
             .responseJSON { response in
                 print("\(response)")
         }
+        self.commandString = "open"
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
