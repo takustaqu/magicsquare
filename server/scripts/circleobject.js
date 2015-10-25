@@ -12,10 +12,19 @@ $(function(){
 			setTransform($("#stage"),data.axises,true)
 		}
 	});
+
+	var jankenCue = [false,false];
+
+	var $soundBlast = $("#sound-blast");
+	var $soundGuard = $("#sound-tie");
+
 	
 	s.on("commands", function (data) {
 		switch(data.command.toLowerCase()){
+			default:
+				var player = parseInt(data.player);
 			case "open":
+
 				openSquare(parseInt(data.player));
 				break;
 			case "close":
@@ -23,21 +32,39 @@ $(function(){
 				setHandType(parseInt(data.player),false);
 				break;
 			case "goo":
-				setHandType(parseInt(data.player),"goo");
+				if(isOpened(parseInt(data.player))){
+					setHandType( parseInt(data.player) ,"goo");
+					jankenCue[ parseInt(data.player) ] = "goo";
+					checkDuel();
+				}
 				break;
 			case "choki":
-				setHandType(parseInt(data.player),"choki");
+				if(isOpened(parseInt(data.player))){
+					setHandType( parseInt(data.player) ,"choki");
+					jankenCue[ parseInt(data.player) ] = "choki";
+					checkDuel();
+				}
 				break;
 			case "par":
-				setHandType(parseInt(data.player),"par");
+				if(isOpened(parseInt(data.player))){
+					setHandType( parseInt(data.player) ,"par");
+					jankenCue[ parseInt(data.player) ] = "par";
+					checkDuel();
+				}
 				break;
 		}
 	});
+
+
 
 	var $squares = [$(".base.player-1 .magicsquare"),$(".base.player-2 .magicsquare")];
 
 	function openSquare(target){
 	  $squares[parseInt(target)].addClass("rotateIn").removeClass("rotateOut").removeClass("closed");
+	}
+
+	function isOpened(target){
+		return $squares[parseInt(target)].hasClass("rotateIn");
 	}
 
 	function closeSquare(target){
@@ -50,7 +77,42 @@ $(function(){
 		}else{
 			$squares[parseInt(target)].removeClass("goo choki par");
 		}
-	  
+	}
+
+	function duel(playerA,playerB){		 
+		 
+		 var result = "";
+		 
+		if(playerA == playerB){
+			return "draw"
+		}else if( (playerA == "goo" && playerB=="choki") || (playerA == "choki" && playerB=="par") || (playerA == "par" && playerB=="goo")){
+			return "player1";
+		}else{
+			return "player2";
+		}
+		 
+	}
+
+	function checkDuel(){
+
+		if(!!jankenCue[0]&&!!jankenCue[1]){
+			var result = duel(jankenCue[0],jankenCue[1]);
+			
+			console.log(jankenCue);
+			if(result != "draw"){
+				$soundBlast.get(0).pause();
+				$soundBlast.get(0).currentTime = 0;
+				$soundBlast.get(0).play();
+			}else{
+				$soundGuard.get(0).currentTime = 0;
+				$soundGuard.get(0).play();
+				
+			}
+			
+			jankenCue = [false,false];
+		}else{
+			return false;
+		}
 	}
 
 	
