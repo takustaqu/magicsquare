@@ -22,6 +22,36 @@ body {
 	left:50%;
 	position: absolute;
 }
+
+.magicsquare .overlay {
+  width:450px;
+  height:450px;
+  position: absolute;
+  margin:calc(450px * -0.5);
+  top:50%;
+  left:50%;
+  z-index:10;
+}
+
+.overlay .goo, 
+.overlay .choki, 
+.overlay .par {
+    -webkit-transform: rotate(-400deg) ;
+    transform: rotate(-400deg) ;
+    transition: transform 0.8s ease-out 0s;
+    opacity:0;
+}
+
+.magicsquare.goo .overlay .goo ,
+.magicsquare.par .overlay .par ,
+.magicsquare.choki .overlay .choki { 
+    opacity:1;;
+    animation: spin 5s linear infinite alternate;
+    /*animation-direction: alternate;*/
+    -webkit-transform: rotate(0deg) ;
+    transform: rotate(0deg) ;
+}
+
 #stage {
 	width:1280px;
 	height:720px;
@@ -199,3 +229,4 @@ body {
 .score li .lose{
   font-size:40%;
 }
+

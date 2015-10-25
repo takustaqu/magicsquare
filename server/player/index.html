@@ -30,11 +30,21 @@
 	</div>
 	<div class="base player-1">
 		<div class="magicsquare closed">
+			<div class="spinning overlay">
+				<img src="/images/icons/goo.jpg" alt="" class="goo">
+				<img src="/images/icons/choki.jpg" alt="" class="choki">
+				<img src="/images/icons/par.jpg" alt="" class="par">
+			</div>
 			<img src="/images/type1/circle.png" alt="" class="spinning">
 		</div>
 	</div>
 	<div class="base player-2">
 		<div class="magicsquare closed">
+			<div class="spinning overlay">
+				<img src="/images/icons/goo.jpg" alt="" class="goo">
+				<img src="/images/icons/choki.jpg" alt="" class="choki">
+				<img src="/images/icons/par.jpg" alt="" class="par">
+			</div>
 			<img src="/images/type1/circle.png" alt="" class="spinning">
 		</div>
 	</div>
@@ -42,47 +52,7 @@
 </div>
 
 
-<script>
+<script src="/scripts/circleobject.js"></script>	
 
-$(function(){
-	
-	var screenName = $("body").attr("data-screen-name");
-
-	var s = io.connect('/',{transports:[ 'websocket']});
-	s.on("calibrate", function (data) {
-		if(screenName != data.target){
-			return false
-		}else{
-			setTransform($("#stage"),data.axises,true)
-		}
-	});
-	
-	s.on("commands", function (data) {
-		switch(data.command.toLowerCase()){
-			case "open":
-				openSquare(parseInt(data.player));
-				break;
-			case "close":
-				closeSquare(parseInt(data.player));
-				break;
-		}
-	});
-
-	var $squares = [$(".base.player-1 .magicsquare"),$(".base.player-2 .magicsquare")];
-
-	function openSquare(target){
-	  $squares[parseInt(target)].addClass("rotateIn").removeClass("rotateOut").removeClass("closed");
-	}
-
-	function closeSquare(target){
-	  $squares[parseInt(target)].removeClass("rotateIn").addClass("rotateOut");
-	}
-
-
-	
-});
-	
-</script>
-	
 </body>
 </html>

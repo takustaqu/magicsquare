@@ -35,8 +35,24 @@
 <a href="#" id="player-1-open">プレーヤー1展開</a>
 <a href="#" id="player-2-open">プレーヤー2展開</a>
 
+<hr>
+
 <a href="#" id="player-1-close">プレーヤー1閉じる</a>
 <a href="#" id="player-2-close">プレーヤー2閉じる</a>
+
+<hr>
+
+<a href="#" id="player-1-goo"> player1 : グー</a>
+<a href="#" id="player-1-choki"> player1 : チョキ</a>
+<a href="#" id="player-1-par"> player1 : パー</a>
+
+<hr>
+
+<a href="#" id="player-2-goo"> player2 : グー</a>
+<a href="#" id="player-2-choki"> player2 : チョキ</a>
+<a href="#" id="player-2-par"> player2 : パー</a>
+
+<hr>
 
 <a href="#" id="post-simulate">post-simulate</a>
 
@@ -135,10 +151,6 @@ $(".axises").each(function(){
 
 	var s = io.connect('/',{transports:[ 'websocket']});
 
-	s.on("doflip", function () {
-		
-	});
-
 	$("#player-1-open").click(function(){
 		s.emit("commands",{"player":"0","command":"open"});
 	});
@@ -152,6 +164,26 @@ $(".axises").each(function(){
 	$("#player-2-close").click(function(){
 		s.emit("commands",{"player":"1","command":"close"});
 	})
+
+	$("#player-1-goo").click(function(){
+		s.emit("commands",{"player":"0","command":"goo"});
+	});
+	$("#player-1-choki").click(function(){
+		s.emit("commands",{"player":"0","command":"choki"});
+	});
+	$("#player-1-par").click(function(){
+		s.emit("commands",{"player":"0","command":"par"});
+	});
+
+	$("#player-2-goo").click(function(){
+		s.emit("commands",{"player":"1","command":"goo"});
+	});
+	$("#player-2-choki").click(function(){
+		s.emit("commands",{"player":"1","command":"choki"});
+	});
+	$("#player-2-par").click(function(){
+		s.emit("commands",{"player":"1","command":"par"});
+	});
 
 	$("#post-simulate").click(function(){
 		$.ajax({
