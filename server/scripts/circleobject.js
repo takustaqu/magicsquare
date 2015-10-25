@@ -6,6 +6,7 @@ $(function(){
 
 	var s = io.connect('/',{transports:[ 'websocket']});
 	s.on("calibrate", function (data) {
+		console.log(data);
 		if(screenName != data.target){
 			return false
 		}else{
