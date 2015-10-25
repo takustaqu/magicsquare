@@ -1,4 +1,5 @@
 
+
 $(function(){
 	
 	var screenName = $("body").attr("data-screen-name");
@@ -19,6 +20,7 @@ $(function(){
 				break;
 			case "close":
 				closeSquare(parseInt(data.player));
+				setHandType(parseInt(data.player),false);
 				break;
 			case "goo":
 				setHandType(parseInt(data.player),"goo");
@@ -43,7 +45,12 @@ $(function(){
 	}
 
 	function setHandType(target,alias){
-	  $squares[parseInt(target)].removeClass("goo choki par").addClass(alias);
+		if(!alias){
+			$squares[parseInt(target)].removeClass("goo choki par").addClass(alias);		
+		}else{
+			$squares[parseInt(target)].removeClass("goo choki par");
+		}
+	  
 	}
 
 	
