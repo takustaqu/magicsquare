@@ -39,10 +39,10 @@ body {
 .overlay .goo, 
 .overlay .choki, 
 .overlay .par {
-    width:250px;
-    height:250px;
+    width:400px;
+    height:400px;
     position: absolute;
-    margin:calc(250px * -0.5);
+    margin:calc(400px * -0.5);
     top:50%;
     left:50%;
     opacity:0;
