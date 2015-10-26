@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+</head>
+<body>
+<a href="#" id="cmd">cmd</a>
+<div class="axises" data-calibrate-target="main">
+	メインプロジェクタ
+	<ul class="top-side left-side">
+		<li><span>x</span><input type="number" name="" value="0" class="left-top-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="left-top-y"></li>
+	</ul>
+
+	<ul class="top-side right-side">
+		<li><span>x</span><input type="number" name="" value="0" class="right-top-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="right-top-y"></li>
+	</ul>
+	
+	<ul class="bottom-side left-side">
+		<li><span>x</span><input type="number" name="" value="0" class="left-bottom-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="left-bottom-y"></li>
+	</ul>
+	
+	<ul class="bottom-side right-side">
+		<li><span>x</span><input type="number" name="" value="0" class="right-bottom-x"></li>
+		<li><span>y</span><input type="number" name="" value="0" class="right-bottom-y"></li>
+	</ul>
+	
+</div>
+
+<a href="#" id="player-1-open">プレーヤー1展開</a>
+<a href="#" id="player-2-open">プレーヤー2展開</a>
+
+<hr>
+
+<a href="#" id="player-1-close">プレーヤー1閉じる</a>
+<a href="#" id="player-2-close">プレーヤー2閉じる</a>
+
+<hr>
+
+<a href="#" id="player-1-goo"> player1 : グー</a>
+<a href="#" id="player-1-choki"> player1 : チョキ</a>
+<a href="#" id="player-1-par"> player1 : パー</a>
+
+<hr>
+
+<a href="#" id="player-2-goo"> player2 : グー</a>
+<a href="#" id="player-2-choki"> player2 : チョキ</a>
+<a href="#" id="player-2-par"> player2 : パー</a>
+
+
+<hr>
+
+<a href="#" id="calibrate">
+	調整枠
+</a>
+<hr>
+
+<a href="#" id="post-simulate">post-simulate</a>
+
+<style>
+body {font-family:sans-serif;}
+	.axises {
+		position: relative;
+		width:640px;
+		height:150px;
+		text-align: center;
+		line-height:150px;
+	}
+	
+
+	.axises input[type="number"]{
+		font-size:30px;
+		line-height:36px;
+		height:40px;
+		box-sizing:border-box;
+		width:4em;
+		display: inline-block;
+	}
+
+	.axises ul , .axises ul li {
+		list-style-type: none;
+		display: block;
+		margin: 0;padding: 0;
+		line-height:1em;
+	}
+
+	.axises:after {
+		position: absolute;
+		width:calc(100% - 50px);
+		height:calc(100% - 50px);
+		box-sizing:border-box;
+		top:25px;
+		left:25px;
+		border:1px dotted #EEE;
+		content:"";
+		display: block;
+	}
+
+	.axises ul {position: absolute;z-index:10;}
+	.axises ul.top-side {top:0px;}
+	.axises ul.bottom-side {bottom:0px;}
+	.axises ul.left-side {left:0px;}
+	.axises ul.right-side {right:0px;}
+	.axises ul li {width:140px;
+	display: inline-block;}
+	.axises ul li span {
+		display: inline-block;
+		height:100%;
+		margin-right:3px;
+		color:#666;
+	}
+</style>
+<script>
+// class="left-top-x"
+// class="left-top-y"
+// class="right-top-x"
+// class="right-top-y"
+// class="left-bottom-x"
+// class="left-bottom-y"
+// class="right-bottom-x"
+// class="right-bottom-y"
+
+$(".axises").each(function(){
+	var axises = [[0,0],[0,0],[0,0],[0,0]];
+
+	var $leftTopX = $(this).find(".left-top-x").eq(0),
+		$leftTopY = $(this).find(".left-top-y").eq(0),
+		$rightTopX = $(this).find(".right-top-x").eq(0),
+		$rightTopY = $(this).find(".right-top-y").eq(0),
+		$leftBottomX = $(this).find(".left-bottom-x").eq(0),
+		$leftBottomY = $(this).find(".left-bottom-y").eq(0),
+		$rightBottomX = $(this).find(".right-bottom-x").eq(0),
+		$rightBottomY = $(this).find(".right-bottom-y").eq(0);
+
+	var target = $(this).attr("data-calibrate-target")
+
+	$(this).find("input").on({"change":function(){
+		var axises = [
+					[parseInt($leftTopX.val()),parseInt($leftTopY.val())],
+					[parseInt($rightTopX.val()),parseInt($rightTopY.val())],
+					[parseInt($rightBottomX.val()),parseInt($rightBottomY.val())],
+					[parseInt($leftBottomX.val()),parseInt($leftBottomY.val())]
+				]
+
+		s.emit("calibrate",{"target":target,"axises":axises});
+
+
+		
+	}})
+})
+// $(document).ready(function(){
+
+	var s = io.connect('/',{transports:[ 'websocket']});
+
+	$("#player-1-open").click(function(){
+		s.emit("commands",{"player":"0","command":"open"});
+	});
+	$("#player-2-open").click(function(){
+		s.emit("commands",{"player":"1","command":"open"});
+	});
+
+	$("#player-1-close").click(function(){
+		s.emit("commands",{"player":"0","command":"close"});
+	})
+	$("#player-2-close").click(function(){
+		s.emit("commands",{"player":"1","command":"close"});
+	})
+
+	$("#player-1-goo").click(function(){
+		s.emit("commands",{"player":"0","command":"goo"});
+	});
+	$("#player-1-choki").click(function(){
+		s.emit("commands",{"player":"0","command":"choki"});
+	});
+	$("#player-1-par").click(function(){
+		s.emit("commands",{"player":"0","command":"par"});
+	});
+
+	$("#player-2-goo").click(function(){
+		s.emit("commands",{"player":"1","command":"goo"});
+	});
+	$("#player-2-choki").click(function(){
+		s.emit("commands",{"player":"1","command":"choki"});
+	});
+	$("#player-2-par").click(function(){
+		s.emit("commands",{"player":"1","command":"par"});
+	});
+
+	$("#calibrate").click(function(){
+		s.emit("grid","true");
+	});
+
+	$("#post-simulate").click(function(){
+		$.ajax({
+	        url: "/api/",
+	        type:'POST',
+	        dataType: 'json',
+	        data : JSON.stringify({"player":"0","command":"Open","intensity":"weak"}),
+	        timeout:10000,
+	        success: function(data) {
+	                      alert("ok");
+	        },
+	        error: function(XMLHttpRequest, textStatus, errorThrown) {
+	                     alert("error");
+	               }
+	      });
+	})
+	 
+
+
+// })
+
+</script>
+	
+</body>
+</html>
