@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+	<script src="/lib/jquery-2.1.4.min.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script type="text/javascript" src="/scripts/shake.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+	<title></title>
+</head>
+<body>
+
+<select id="player">
+	<option value="0">PLAYER 1</option>
+	<option value="1">PLAYER 2</option>
+</select>
+
+<select id="command">
+	<option value="open">開く</option>
+	<option value="close">閉じる</option>
+	<option value="goo">グー</option>
+	<option value="choki">チョキ</option>
+	<option value="par">パー</option>
+</select>
+
+コマンドを選んでから、軽く振ってね。<br>
+画面はロックしてる方が多分やりやすい。
+
+
+<script type="text/javascript">
+	var s = io.connect('/',{transports:[ 'websocket']});
+
+	var myShakeEvent = new Shake({ 
+			threshold: 15, // optional shake strength threshold 
+			timeout: 1000 // optional, determines the frequency of event generation 
+		});
+
+	myShakeEvent.start();
+
+	$(window).on({"shake":function(){
+		console.log();
+		s.emit("commands",{"player":$("#player").val(),"command":$("#command").val()});
+	}});
+
+</script>
+
+<style type="text/css">
+	select {
+		font-size:30px;
+		display:block;
+		margin:20px auto;
+	}
+</style>
+
+</body>
+</html>
