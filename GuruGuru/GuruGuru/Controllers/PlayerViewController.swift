@@ -12,17 +12,35 @@ import AVFoundation
 
 class PlayerViewController: UIViewController{
     
-    @IBOutlet weak private var segmentControl : UISegmentedControl!
+    private let URI = "http:///magicrune.cloudapp.net/api/"
     
     @IBOutlet weak private var guButton : UIButton!
     @IBOutlet weak private var chokiButton : UIButton!
     @IBOutlet weak private var parButton : UIButton!
+    
+    @IBOutlet weak private var startingImage : UIImageView!
+    @IBOutlet weak private var guSelect : UIImageView!
+    @IBOutlet weak private var chokiSelect : UIImageView!
+    @IBOutlet weak private var parSelect : UIImageView!
+    
+    @IBOutlet weak private var explane : UILabel!
+    
+    @IBOutlet weak private var palyer1Button : UIButton!
+    @IBOutlet weak private var palyer2Button : UIButton!
     
     private var manager : EmotionManager? = EmotionManager.instance
     private var channel = -1
     private var commandString = "open"
     
     private var boisArray:[String] = ["voice-magic-01","voice-magic-earth01","voice-magic-fire01","voice-magic-ice01","voice-magic-wind01","voice-hanyou01","voice-hanyou-C03","voice-hanyou02","voice-berserk01","voice-berserk03","voice-berserk04"]
+    
+    private var imageP1_ON = UIImage(named:"btn_player1_on")
+    private var imageP1_OFF = UIImage(named:"btn_player1_off")
+    
+    private var imageP2_ON = UIImage(named:"btn_player2_on")
+    private var imageP2_OFF = UIImage(named:"btn_player2_off")
+    
+    private var playerNumber = 1
     
     private var player :AVAudioPlayer?
     
@@ -33,6 +51,10 @@ class PlayerViewController: UIViewController{
         self.chokiButton.enabled = false;
         self.parButton.enabled = false;
         
+        self.guSelect.hidden = true;
+        self.chokiSelect.hidden = true;
+        self.parSelect.hidden = true;
+        self.startingImage.hidden = false;
         var intency = ""
         // Do any additional setup after loading the view, typically from a nib.
         self.manager?.changeCommand = { command in
@@ -55,12 +77,13 @@ class PlayerViewController: UIViewController{
             }
             if(self.commandString != "" ||  self.channel != -1)
             {
+                
                 let parameters = [
-                    "player": "\(self.segmentControl.selectedSegmentIndex)",
+                    "player": "\(self.playerNumber)",
                     "command": "\(self.commandString)",
                     "intensity":"\(intency)"
                 ]
-                Alamofire.request(.POST, "http://magicrune.cloudapp.net/magicrune.cloudapp.net/api/", parameters: parameters, encoding: .JSON)
+                Alamofire.request(.POST, self.URI, parameters: parameters, encoding: .JSON)
                     .responseJSON { response in
                         print("\(response)")
                 }
@@ -71,8 +94,8 @@ class PlayerViewController: UIViewController{
                 self.guButton.enabled = true;
                 self.chokiButton.enabled = true;
                 self.parButton.enabled = true;
-                
-                self.segmentControl.enabled = false;
+                self.startingImage.hidden = true;
+                self.explane.text = "出す手を選んでください"
                 let randData:Int = Int(arc4random() % 11)
                 print("\(self.boisArray[randData])")
                 let urlString = NSBundle.mainBundle().pathForResource(self.boisArray[randData], ofType: "wav")
@@ -91,9 +114,15 @@ class PlayerViewController: UIViewController{
             {
                 self.commandString = "open"
                 
+                self.explane.text = "出す手を選んでください"
+                
                 self.guButton.enabled = true;
                 self.chokiButton.enabled = true;
                 self.parButton.enabled = true;
+                
+                self.guSelect.hidden = true;
+                self.chokiSelect.hidden = true;
+                self.parSelect.hidden = true;
                 
             }
         }
@@ -103,14 +132,13 @@ class PlayerViewController: UIViewController{
     @IBAction private func player1()
     {
         self.channel = 0
-        print("\(self.segmentControl.selectedSegmentIndex)")
         let parameters = [
             "player": "\(self.channel)",
             "command": "Open",
             "intensity":"weak"
         ]
         
-        Alamofire.request(.POST, "http://magicrune.cloudapp.net/api", parameters: parameters , encoding:.JSON)
+        Alamofire.request(.POST, self.URI, parameters: parameters , encoding:.JSON)
             .responseJSON { response in
                 print("\(response)")
         }
@@ -126,20 +154,25 @@ class PlayerViewController: UIViewController{
             "intensity":"weak"
         ]
         
-        Alamofire.request(.POST, "http://magicrune.cloudapp.net/api", parameters: parameters , encoding:.JSON)
+        Alamofire.request(.POST, self.URI, parameters: parameters , encoding:.JSON)
             .responseJSON { response in
                 print("\(response)")
         }
     }
     
-    @IBAction private func player3()
+    @IBAction private func player1Select()
     {
-        self.channel = 2
+        self.playerNumber = 0;
+        self.palyer1Button.setBackgroundImage(self.imageP1_ON, forState: UIControlState.Normal);
+        self.palyer2Button.setBackgroundImage(self.imageP2_OFF, forState: UIControlState.Normal);
     }
     
-    @IBAction private func player4()
+    
+    @IBAction private func player2Select()
     {
-        self.channel = 3
+        self.playerNumber = 1;
+        self.palyer1Button.setBackgroundImage(self.imageP1_OFF, forState: UIControlState.Normal);
+        self.palyer2Button.setBackgroundImage(self.imageP2_ON, forState: UIControlState.Normal);
     }
     
     
@@ -148,6 +181,12 @@ class PlayerViewController: UIViewController{
         self.commandString = "goo"
         self.chokiButton.enabled = false;
         self.parButton.enabled = false;
+        
+        self.guSelect.hidden = false;
+        self.chokiSelect.hidden = true;
+        self.parSelect.hidden = true;
+        
+        self.explane.text = "対戦相手と同時に\niPhoneを振ってください"
     }
     
     @IBAction private func choki()
@@ -155,6 +194,12 @@ class PlayerViewController: UIViewController{
         self.commandString = "choki"
         self.guButton.enabled = false;
         self.parButton.enabled = false;
+        
+        self.guSelect.hidden = true;
+        self.chokiSelect.hidden = false;
+        self.parSelect.hidden = true;
+        
+        self.explane.text = "対戦相手と同時に\niPhoneを振ってください"
     }
     
     @IBAction private func pa()
@@ -162,6 +207,12 @@ class PlayerViewController: UIViewController{
         self.commandString = "par"
         self.chokiButton.enabled = false;
         self.guButton.enabled = false;
+        
+        self.guSelect.hidden = true;
+        self.chokiSelect.hidden = true;
+        self.parSelect.hidden = false;
+        
+        self.explane.text = "対戦相手と同時に\niPhoneを振ってください"
     }
     
     @IBAction private func sneak()
@@ -180,18 +231,23 @@ class PlayerViewController: UIViewController{
         self.guButton.enabled = false;
         self.chokiButton.enabled = false;
         self.parButton.enabled = false;
+        self.startingImage.hidden = false;
         
-        self.segmentControl.enabled = true;
+        self.guSelect.hidden = true;
+        self.chokiSelect.hidden = true;
+        self.parSelect.hidden = true;
+        self.explane.text = "iPhoneを振って魔法陣を\n召喚してください"
         
         let parameters = [
-            "player": "\(self.segmentControl.selectedSegmentIndex)",
+            "player": "\(self.playerNumber)",
             "command": "close",
             "intensity":"weak"
         ]
-        Alamofire.request(.POST, "http://magicrune.cloudapp.net/api", parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, self.URI, parameters: parameters, encoding: .JSON)
             .responseJSON { response in
                 print("\(response)")
         }
+        
         self.commandString = "open"
     }
     

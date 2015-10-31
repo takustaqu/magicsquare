@@ -28,6 +28,7 @@
 		4060E47F1BDC999F00EF08A3 /* voice-magic-fire01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4741BDC999F00EF08A3 /* voice-magic-fire01.wav */; settings = {ASSET_TAGS = (); }; };
 		4060E4801BDC999F00EF08A3 /* voice-magic-ice01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4751BDC999F00EF08A3 /* voice-magic-ice01.wav */; settings = {ASSET_TAGS = (); }; };
 		4060E4811BDC999F00EF08A3 /* voice-magic-wind01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E4761BDC999F00EF08A3 /* voice-magic-wind01.wav */; settings = {ASSET_TAGS = (); }; };
+		408A12BA1BE4EC1700E65FAF /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A12B91BE4EC1700E65FAF /* RoundView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		4060E4741BDC999F00EF08A3 /* voice-magic-fire01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-fire01.wav"; path = "GuruGuru/voice-magic-fire01.wav"; sourceTree = "<group>"; };
 		4060E4751BDC999F00EF08A3 /* voice-magic-ice01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-ice01.wav"; path = "GuruGuru/voice-magic-ice01.wav"; sourceTree = "<group>"; };
 		4060E4761BDC999F00EF08A3 /* voice-magic-wind01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-magic-wind01.wav"; path = "GuruGuru/voice-magic-wind01.wav"; sourceTree = "<group>"; };
+		408A12B91BE4EC1700E65FAF /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundView.swift; path = Views/RoundView.swift; sourceTree = "<group>"; };
 		40C1A1868DB6EECAE55F0DA9 /* Pods_GuruGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuruGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483F4B249FEC10982EEECE0A /* Pods-GuruGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuruGuru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuruGuru/Pods-GuruGuru.debug.xcconfig"; sourceTree = "<group>"; };
 		EB53BCDF61B38497575B7818 /* Pods-GuruGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuruGuru.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuruGuru/Pods-GuruGuru.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		40294B0F1BDB48D10005DFBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				408A12B91BE4EC1700E65FAF /* RoundView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40294AE31BDB47A10005DFBE /* PlayerViewController.swift in Sources */,
+				408A12BA1BE4EC1700E65FAF /* RoundView.swift in Sources */,
 				40294AE11BDB47A10005DFBE /* AppDelegate.swift in Sources */,
 				40294B121BDB48E90005DFBE /* EmotionManager.swift in Sources */,
 			);
