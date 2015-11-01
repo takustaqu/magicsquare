@@ -17,6 +17,8 @@
 		40294B011BDB47A10005DFBE /* GuruGuruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294B001BDB47A10005DFBE /* GuruGuruUITests.swift */; };
 		40294B121BDB48E90005DFBE /* EmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40294B111BDB48E90005DFBE /* EmotionManager.swift */; settings = {ASSET_TAGS = (); }; };
 		40294B141BDB5EC80005DFBE /* magic-flame1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 40294B131BDB5EC80005DFBE /* magic-flame1.mp3 */; settings = {ASSET_TAGS = (); }; };
+		405C8CDA1BE5F34E008AECF9 /* RotateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405C8CD91BE5F34E008AECF9 /* RotateImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		405C8CDC1BE5F9FF008AECF9 /* TransformImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405C8CDB1BE5F9FF008AECF9 /* TransformImageView.swift */; settings = {ASSET_TAGS = (); }; };
 		4060E4771BDC999F00EF08A3 /* voice-berserk01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46C1BDC999F00EF08A3 /* voice-berserk01.wav */; settings = {ASSET_TAGS = (); }; };
 		4060E4781BDC999F00EF08A3 /* voice-berserk03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46D1BDC999F00EF08A3 /* voice-berserk03.wav */; settings = {ASSET_TAGS = (); }; };
 		4060E4791BDC999F00EF08A3 /* voice-berserk04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4060E46E1BDC999F00EF08A3 /* voice-berserk04.wav */; settings = {ASSET_TAGS = (); }; };
@@ -49,7 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		40294ADD1BDB47A10005DFBE /* GuruGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuruGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40294ADD1BDB47A10005DFBE /* じゃん拳魔法.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "じゃん拳魔法.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40294AE01BDB47A10005DFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40294AE21BDB47A10005DFBE /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewController.swift; path = Controllers/PlayerViewController.swift; sourceTree = "<group>"; };
 		40294AE51BDB47A10005DFBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,8 @@
 		40294B021BDB47A10005DFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40294B111BDB48E90005DFBE /* EmotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmotionManager.swift; path = Models/EmotionManager.swift; sourceTree = "<group>"; };
 		40294B131BDB5EC80005DFBE /* magic-flame1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "magic-flame1.mp3"; sourceTree = "<group>"; };
+		405C8CD91BE5F34E008AECF9 /* RotateImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotateImageView.swift; path = Views/RotateImageView.swift; sourceTree = "<group>"; };
+		405C8CDB1BE5F9FF008AECF9 /* TransformImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransformImageView.swift; path = Views/TransformImageView.swift; sourceTree = "<group>"; };
 		4060E46C1BDC999F00EF08A3 /* voice-berserk01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-berserk01.wav"; path = "GuruGuru/voice-berserk01.wav"; sourceTree = "<group>"; };
 		4060E46D1BDC999F00EF08A3 /* voice-berserk03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-berserk03.wav"; path = "GuruGuru/voice-berserk03.wav"; sourceTree = "<group>"; };
 		4060E46E1BDC999F00EF08A3 /* voice-berserk04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "voice-berserk04.wav"; path = "GuruGuru/voice-berserk04.wav"; sourceTree = "<group>"; };
@@ -143,7 +147,7 @@
 		40294ADE1BDB47A10005DFBE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				40294ADD1BDB47A10005DFBE /* GuruGuru.app */,
+				40294ADD1BDB47A10005DFBE /* じゃん拳魔法.app */,
 				40294AF11BDB47A10005DFBE /* GuruGuruTests.xctest */,
 				40294AFC1BDB47A10005DFBE /* GuruGuruUITests.xctest */,
 			);
@@ -195,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				408A12B91BE4EC1700E65FAF /* RoundView.swift */,
+				405C8CD91BE5F34E008AECF9 /* RotateImageView.swift */,
+				405C8CDB1BE5F9FF008AECF9 /* TransformImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -235,7 +241,7 @@
 			);
 			name = GuruGuru;
 			productName = GuruGuru;
-			productReference = 40294ADD1BDB47A10005DFBE /* GuruGuru.app */;
+			productReference = 40294ADD1BDB47A10005DFBE /* じゃん拳魔法.app */;
 			productType = "com.apple.product-type.application";
 		};
 		40294AF01BDB47A10005DFBE /* GuruGuruTests */ = {
@@ -411,7 +417,9 @@
 				40294AE31BDB47A10005DFBE /* PlayerViewController.swift in Sources */,
 				408A12BA1BE4EC1700E65FAF /* RoundView.swift in Sources */,
 				40294AE11BDB47A10005DFBE /* AppDelegate.swift in Sources */,
+				405C8CDA1BE5F34E008AECF9 /* RotateImageView.swift in Sources */,
 				40294B121BDB48E90005DFBE /* EmotionManager.swift in Sources */,
+				405C8CDC1BE5F9FF008AECF9 /* TransformImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,10 +561,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GuruGuru/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuru;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "じゃん拳魔法";
 			};
 			name = Debug;
 		};
@@ -566,10 +574,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GuruGuru/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuru;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "じゃん拳魔法";
 			};
 			name = Release;
 		};

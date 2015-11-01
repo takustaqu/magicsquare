@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -8,7 +9,7 @@
         <!--Player View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="GuruGuru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="じゃん拳魔法" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-TF-UTT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-TF-UTT" customClass="RotateImageView" customModule="じゃん拳魔法" customModuleProvider="target">
                                 <rect key="frame" x="57" y="232" width="300" height="300"/>
                                 <animations/>
                                 <constraints>
@@ -73,7 +74,7 @@
                                     <action selector="choki" destination="BYZ-38-t0r" eventType="touchUpInside" id="88c-sP-NcK"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-Pp-Fuf" customClass="RoundView" customModule="GuruGuru" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-Pp-Fuf" customClass="RoundView" customModule="じゃん拳魔法" customModuleProvider="target">
                                 <rect key="frame" x="110" y="40" width="193" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBr-Wm-Svr">
@@ -120,7 +121,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="He1-C0-Z3Y">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="He1-C0-Z3Y" customClass="TransformImageView" customModule="じゃん拳魔法" customModuleProvider="target">
                                 <rect key="frame" x="127" y="378" width="170" height="180"/>
                                 <animations/>
                                 <constraints>
@@ -128,7 +129,7 @@
                                     <constraint firstAttribute="width" constant="170" id="PUV-Rq-h9q"/>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-ge-V6X">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-ge-V6X" customClass="TransformImageView" customModule="じゃん拳魔法" customModuleProvider="target">
                                 <rect key="frame" x="206" y="225" width="170" height="180"/>
                                 <animations/>
                                 <constraints>
@@ -136,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="180" id="Xnw-Cs-Ocj"/>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-LS-VhW">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-LS-VhW" customClass="TransformImageView" customModule="じゃん拳魔法" customModuleProvider="target">
                                 <rect key="frame" x="37" y="225" width="170" height="180"/>
                                 <animations/>
                                 <constraints>
@@ -152,6 +153,13 @@
                                     <constraint firstAttribute="height" constant="336" id="sOv-nm-Cdj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-m1-Sqz">
+                                <rect key="frame" x="6" y="40" width="46" height="52"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="BHf-54-pjH" kind="show" id="958-fF-NZ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,6 +196,7 @@
                         <outlet property="explane" destination="GdG-Gt-tFd" id="Cbg-Vg-KFy"/>
                         <outlet property="guButton" destination="pcH-7H-qcF" id="1Ds-Bi-9P3"/>
                         <outlet property="guSelect" destination="n2y-LS-VhW" id="fHE-Nt-Szi"/>
+                        <outlet property="mahoujinImage" destination="ug2-TF-UTT" id="57f-Jf-ZKl"/>
                         <outlet property="palyer1Button" destination="XBr-Wm-Svr" id="Bjm-Uk-OJv"/>
                         <outlet property="palyer2Button" destination="Xpz-xw-v2o" id="PSL-a2-THF"/>
                         <outlet property="parButton" destination="8Gv-dd-Vc0" id="cb4-nb-1fm"/>
@@ -198,6 +207,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="173"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zOs-kb-lVd">
+            <objects>
+                <viewController id="BHf-54-pjH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HYb-De-EVF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ChS-qq-h2U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nyd-9q-e8G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNH-JB-8Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="105"/>
         </scene>
     </scenes>
     <resources>

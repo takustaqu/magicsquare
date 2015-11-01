@@ -12,16 +12,18 @@ import AVFoundation
 
 class PlayerViewController: UIViewController{
     
-    private let URI = "http:///magicrune.cloudapp.net/api/"
+    private let URI = "http://yamamac.local:3000/api"
     
     @IBOutlet weak private var guButton : UIButton!
     @IBOutlet weak private var chokiButton : UIButton!
     @IBOutlet weak private var parButton : UIButton!
     
     @IBOutlet weak private var startingImage : UIImageView!
-    @IBOutlet weak private var guSelect : UIImageView!
-    @IBOutlet weak private var chokiSelect : UIImageView!
-    @IBOutlet weak private var parSelect : UIImageView!
+    @IBOutlet weak private var guSelect : TransformImageView!
+    @IBOutlet weak private var chokiSelect : TransformImageView!
+    @IBOutlet weak private var parSelect : TransformImageView!
+    
+    @IBOutlet weak private var mahoujinImage : RotateImageView!
     
     @IBOutlet weak private var explane : UILabel!
     
@@ -40,12 +42,13 @@ class PlayerViewController: UIViewController{
     private var imageP2_ON = UIImage(named:"btn_player2_on")
     private var imageP2_OFF = UIImage(named:"btn_player2_off")
     
-    private var playerNumber = 1
+    private var playerNumber = 0
     
     private var player :AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.guButton.enabled = false;
         self.chokiButton.enabled = false;
@@ -95,6 +98,7 @@ class PlayerViewController: UIViewController{
                 self.chokiButton.enabled = true;
                 self.parButton.enabled = true;
                 self.startingImage.hidden = true;
+                self.mahoujinImage.startAnimation()
                 self.explane.text = "出す手を選んでください"
                 let randData:Int = Int(arc4random() % 11)
                 print("\(self.boisArray[randData])")
@@ -186,6 +190,8 @@ class PlayerViewController: UIViewController{
         self.chokiSelect.hidden = true;
         self.parSelect.hidden = true;
         
+        self.guSelect.startAnimation()
+        
         self.explane.text = "対戦相手と同時に\niPhoneを振ってください"
     }
     
@@ -199,6 +205,8 @@ class PlayerViewController: UIViewController{
         self.chokiSelect.hidden = false;
         self.parSelect.hidden = true;
         
+        self.chokiSelect.startAnimation()
+        
         self.explane.text = "対戦相手と同時に\niPhoneを振ってください"
     }
     
@@ -211,6 +219,8 @@ class PlayerViewController: UIViewController{
         self.guSelect.hidden = true;
         self.chokiSelect.hidden = true;
         self.parSelect.hidden = false;
+        
+        self.parSelect.startAnimation()
         
         self.explane.text = "対戦相手と同時に\niPhoneを振ってください"
     }
@@ -251,6 +261,18 @@ class PlayerViewController: UIViewController{
         self.commandString = "open"
     }
     
+    @IBAction private func test()
+    {
+        let parameters = [
+            "player": "0",
+            "command": "open",
+            "intensity":"weak"
+        ]
+        Alamofire.request(.POST, self.URI, parameters: parameters, encoding: .JSON)
+            .responseJSON { response in
+                print("\(response)")
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
