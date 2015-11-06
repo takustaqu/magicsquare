@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -153,11 +153,15 @@
                                     <constraint firstAttribute="height" constant="336" id="sOv-nm-Cdj"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-m1-Sqz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-m1-Sqz">
                                 <rect key="frame" x="6" y="40" width="46" height="52"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Dfd-ne-xRD"/>
+                                    <constraint firstAttribute="height" constant="52" id="xVn-IT-S8R"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="BHf-54-pjH" kind="show" id="958-fF-NZ4"/>
+                                    <segue destination="BHf-54-pjH" kind="presentation" id="958-fF-NZ4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -167,11 +171,13 @@
                             <constraint firstItem="YMb-mk-5Bs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0XK-ge-KeV"/>
                             <constraint firstItem="7Ma-Pp-Fuf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Hg-Hm-g37"/>
                             <constraint firstItem="pcH-7H-qcF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="47q-eq-gNP"/>
+                            <constraint firstItem="vbw-m1-Sqz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="6Zh-2O-oaR"/>
                             <constraint firstItem="ug2-TF-UTT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="14" id="9nT-Xg-MVu"/>
                             <constraint firstItem="7Ma-Pp-Fuf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="AHZ-Ds-iox"/>
                             <constraint firstItem="GdG-Gt-tFd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F0e-U7-q8d"/>
                             <constraint firstItem="n2y-LS-VhW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-53" id="HxX-pe-Yke"/>
                             <constraint firstItem="YMb-mk-5Bs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="IYS-st-9nj"/>
+                            <constraint firstItem="vbw-m1-Sqz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="N7U-yD-Dx2"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aK1-zc-jiV" secondAttribute="bottom" constant="20" id="PMY-jo-QFM"/>
                             <constraint firstItem="bvV-ge-V6X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="84" id="QTW-RV-0w6"/>
                             <constraint firstItem="pcH-7H-qcF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-84" id="U9y-KU-h0h"/>
@@ -208,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="300" y="173"/>
         </scene>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="zOs-kb-lVd">
             <objects>
-                <viewController id="BHf-54-pjH" sceneMemberID="viewController">
+                <viewController id="BHf-54-pjH" customClass="TestViewController" customModule="じゃん拳魔法" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HYb-De-EVF"/>
                         <viewControllerLayoutGuide type="bottom" id="ChS-qq-h2U"/>
@@ -219,9 +225,53 @@
                     <view key="view" contentMode="scaleToFill" id="Nyd-9q-e8G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9SC-ad-g0o">
+                                <rect key="frame" x="36" y="66" width="342" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-06-OFk">
+                                <rect key="frame" x="340" y="138" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7uT-ok-fFg"/>
+                                    <constraint firstAttribute="height" constant="30" id="g3G-bW-Sq9"/>
+                                </constraints>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="dicede" destination="BHf-54-pjH" eventType="touchUpInside" id="wey-n2-VkW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnY-UT-bfS">
+                                <rect key="frame" x="55" y="214" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Dyb-Et-UiR"/>
+                                    <constraint firstAttribute="height" constant="30" id="IMO-dE-VZ3"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="modoru" destination="BHf-54-pjH" eventType="touchUpInside" id="Mix-ps-7pJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9SC-ad-g0o" secondAttribute="trailing" constant="16" id="G7W-UE-uaZ"/>
+                            <constraint firstItem="9SC-ad-g0o" firstAttribute="top" secondItem="HYb-De-EVF" secondAttribute="bottom" constant="46" id="KQU-5z-RAc"/>
+                            <constraint firstItem="9SC-ad-g0o" firstAttribute="leading" secondItem="Nyd-9q-e8G" secondAttribute="leadingMargin" constant="16" id="SyG-o2-z5v"/>
+                            <constraint firstItem="Fv9-06-OFk" firstAttribute="top" secondItem="9SC-ad-g0o" secondAttribute="bottom" constant="42" id="V9b-hv-nzg"/>
+                            <constraint firstItem="BnY-UT-bfS" firstAttribute="leading" secondItem="Nyd-9q-e8G" secondAttribute="leadingMargin" constant="35" id="XIh-9t-vTE"/>
+                            <constraint firstItem="BnY-UT-bfS" firstAttribute="top" secondItem="9SC-ad-g0o" secondAttribute="bottom" constant="118" id="h7W-Im-uJX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fv9-06-OFk" secondAttribute="trailing" constant="24" id="qvr-rK-ZMr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="text" destination="9SC-ad-g0o" id="frv-0r-XOp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNH-JB-8Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
