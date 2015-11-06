@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "40294ADC1BDB47A10005DFBE"
-               BuildableName = "GuruGuru.app"
+               BuildableName = "&#x3057;&#x3099;&#x3083;&#x3093;&#x62f3;&#x9b54;&#x6cd5;.app"
                BlueprintName = "GuruGuru"
                ReferencedContainer = "container:GuruGuru.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40294ADC1BDB47A10005DFBE"
-            BuildableName = "GuruGuru.app"
+            BuildableName = "&#x3057;&#x3099;&#x3083;&#x3093;&#x62f3;&#x9b54;&#x6cd5;.app"
             BlueprintName = "GuruGuru"
             ReferencedContainer = "container:GuruGuru.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40294ADC1BDB47A10005DFBE"
-            BuildableName = "GuruGuru.app"
+            BuildableName = "&#x3057;&#x3099;&#x3083;&#x3093;&#x62f3;&#x9b54;&#x6cd5;.app"
             BlueprintName = "GuruGuru"
             ReferencedContainer = "container:GuruGuru.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "40294ADC1BDB47A10005DFBE"
-            BuildableName = "GuruGuru.app"
+            BuildableName = "&#x3057;&#x3099;&#x3083;&#x3093;&#x62f3;&#x9b54;&#x6cd5;.app"
             BlueprintName = "GuruGuru"
             ReferencedContainer = "container:GuruGuru.xcodeproj">
          </BuildableReference>

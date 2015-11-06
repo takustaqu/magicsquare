@@ -27,11 +27,11 @@ final class EmotionManager: NSObject {
     //MARK: private
     private var waiting = false
     
-    private let friq = 0.3 // 計測周期
-    private let waitingTime = 8// 変化の時間（5s）
+    private let friq = 0.1 // 計測周期
+    private let waitingTime = 10// 変化の時間
     private var waitingCounter = 0;
     
-    private let weakCount = 1.0;
+    private let weakCount = 1.2;
     private let normalCount = 1.8;
     private let strongcount = 2.5;
     

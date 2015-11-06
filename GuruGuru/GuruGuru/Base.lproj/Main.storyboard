@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Player View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="GuruGuru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="じゃん拳魔法" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,86 +18,275 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-7H-qcF">
-                                <rect key="frame" x="52" y="192" width="80" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-TF-UTT" customClass="RotateImageView" customModule="じゃん拳魔法" customModuleProvider="target">
+                                <rect key="frame" x="57" y="232" width="300" height="300"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="1pN-uG-6Zw"/>
-                                    <constraint firstAttribute="height" constant="80" id="KBa-2w-kfc"/>
+                                    <constraint firstAttribute="width" constant="300" id="cUF-rG-afX"/>
+                                    <constraint firstAttribute="height" constant="300" id="hwf-Rh-PMx"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="icon_goo"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcH-7H-qcF">
+                                <rect key="frame" x="63" y="248" width="120" height="120"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="CLf-Mp-mbE"/>
+                                    <constraint firstAttribute="width" constant="120" id="CTu-41-qmz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="goo"/>
                                 <connections>
                                     <action selector="gu" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtH-aR-WRf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gv-dd-Vc0">
-                                <rect key="frame" x="159" y="253" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gv-dd-Vc0" userLabel="par Button">
+                                <rect key="frame" x="222" y="245" width="130" height="120"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Kfk-SR-2gj"/>
-                                    <constraint firstAttribute="width" constant="80" id="mVm-v3-UEq"/>
+                                    <constraint firstAttribute="width" constant="130" id="ajQ-pN-67A"/>
+                                    <constraint firstAttribute="height" constant="120" id="wZ4-na-MVb"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="icon_choki"/>
+                                <state key="normal" image="par"/>
                                 <connections>
-                                    <action selector="choki" destination="BYZ-38-t0r" eventType="touchUpInside" id="IHR-EN-UVO"/>
+                                    <action selector="pa" destination="BYZ-38-t0r" eventType="touchUpInside" id="ag1-bq-GxH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK1-zc-jiV">
-                                <rect key="frame" x="187" y="698" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK1-zc-jiV" userLabel="close Button">
+                                <rect key="frame" x="20" y="636" width="80" height="80"/>
                                 <animations/>
-                                <state key="normal" title="終わる"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="7ya-mR-HMr"/>
+                                    <constraint firstAttribute="width" constant="80" id="efF-sU-3XY"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btn_close"/>
                                 <connections>
                                     <action selector="logOut" destination="BYZ-38-t0r" eventType="touchUpInside" id="82Z-Lo-3jO"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="47s-ya-IQh">
-                                <rect key="frame" x="137" y="94" width="119" height="29"/>
-                                <animations/>
-                                <segments>
-                                    <segment title="Player1"/>
-                                    <segment title="Player2"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax1-lS-1HL">
-                                <rect key="frame" x="282" y="192" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax1-lS-1HL" userLabel="choki Button">
+                                <rect key="frame" x="152" y="388" width="110" height="144"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="IE6-9i-e8L"/>
-                                    <constraint firstAttribute="width" constant="80" id="koL-ak-1dK"/>
+                                    <constraint firstAttribute="height" constant="144" id="VSc-FA-OOL"/>
+                                    <constraint firstAttribute="width" constant="110" id="acu-lT-sC3"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="icon_per"/>
+                                <state key="normal" image="choki"/>
                                 <connections>
-                                    <action selector="pa" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdz-vT-W2t"/>
+                                    <action selector="choki" destination="BYZ-38-t0r" eventType="touchUpInside" id="88c-sP-NcK"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ma-Pp-Fuf" customClass="RoundView" customModule="じゃん拳魔法" customModuleProvider="target">
+                                <rect key="frame" x="110" y="40" width="193" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBr-Wm-Svr">
+                                        <rect key="frame" x="1" y="1" width="95" height="38"/>
+                                        <animations/>
+                                        <state key="normal" backgroundImage="btn_player1_on"/>
+                                        <connections>
+                                            <action selector="player1Select" destination="BYZ-38-t0r" eventType="touchUpInside" id="45F-c8-Iuc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpz-xw-v2o">
+                                        <rect key="frame" x="97" y="1" width="95" height="38"/>
+                                        <animations/>
+                                        <state key="normal" backgroundImage="btn_player2_off"/>
+                                        <connections>
+                                            <action selector="player2Select" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z0C-ty-bv9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Nf-5g-Iuc"/>
+                                    <constraint firstAttribute="width" constant="193" id="ApE-7g-Eeu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdG-Gt-tFd">
+                                <rect key="frame" x="0.0" y="100" width="414" height="53"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="xaB-7h-NwP"/>
+                                </constraints>
+                                <string key="text">iPhoneを振って魔法陣を
+召喚してください</string>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="He1-C0-Z3Y" customClass="TransformImageView" customModule="じゃん拳魔法" customModuleProvider="target">
+                                <rect key="frame" x="127" y="378" width="170" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="A3w-yw-MV2"/>
+                                    <constraint firstAttribute="width" constant="170" id="PUV-Rq-h9q"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-ge-V6X" customClass="TransformImageView" customModule="じゃん拳魔法" customModuleProvider="target">
+                                <rect key="frame" x="206" y="225" width="170" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Pgr-Sh-bUJ"/>
+                                    <constraint firstAttribute="height" constant="180" id="Xnw-Cs-Ocj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-LS-VhW" customClass="TransformImageView" customModule="じゃん拳魔法" customModuleProvider="target">
+                                <rect key="frame" x="37" y="225" width="170" height="180"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Vfs-NP-NJx"/>
+                                    <constraint firstAttribute="width" constant="170" id="s7m-gA-tXI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startimg" translatesAutoresizingMaskIntoConstraints="NO" id="YMb-mk-5Bs">
+                                <rect key="frame" x="65" y="220" width="285" height="336"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="Yr9-ZP-NTj"/>
+                                    <constraint firstAttribute="height" constant="336" id="sOv-nm-Cdj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbw-m1-Sqz">
+                                <rect key="frame" x="6" y="40" width="46" height="52"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Dfd-ne-xRD"/>
+                                    <constraint firstAttribute="height" constant="52" id="xVn-IT-S8R"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="BHf-54-pjH" kind="presentation" id="958-fF-NZ4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="47s-ya-IQh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3uz-y1-6e4"/>
-                            <constraint firstItem="aK1-zc-jiV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B9r-A0-dhn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aK1-zc-jiV" secondAttribute="bottom" constant="8" id="b73-xq-eUa"/>
-                            <constraint firstItem="8Gv-dd-Vc0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pGE-pv-4DC"/>
-                            <constraint firstItem="pcH-7H-qcF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="32" id="y6N-Pe-IDS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ax1-lS-1HL" secondAttribute="trailing" constant="32" id="yMZ-o6-VGt"/>
+                            <constraint firstItem="YMb-mk-5Bs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0XK-ge-KeV"/>
+                            <constraint firstItem="7Ma-Pp-Fuf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Hg-Hm-g37"/>
+                            <constraint firstItem="pcH-7H-qcF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="47q-eq-gNP"/>
+                            <constraint firstItem="vbw-m1-Sqz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="6Zh-2O-oaR"/>
+                            <constraint firstItem="ug2-TF-UTT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="14" id="9nT-Xg-MVu"/>
+                            <constraint firstItem="7Ma-Pp-Fuf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="AHZ-Ds-iox"/>
+                            <constraint firstItem="GdG-Gt-tFd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F0e-U7-q8d"/>
+                            <constraint firstItem="n2y-LS-VhW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-53" id="HxX-pe-Yke"/>
+                            <constraint firstItem="YMb-mk-5Bs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="IYS-st-9nj"/>
+                            <constraint firstItem="vbw-m1-Sqz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="N7U-yD-Dx2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aK1-zc-jiV" secondAttribute="bottom" constant="20" id="PMY-jo-QFM"/>
+                            <constraint firstItem="bvV-ge-V6X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="84" id="QTW-RV-0w6"/>
+                            <constraint firstItem="pcH-7H-qcF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-84" id="U9y-KU-h0h"/>
+                            <constraint firstItem="bvV-ge-V6X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-53" id="VFy-hX-RMg"/>
+                            <constraint firstItem="n2y-LS-VhW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-85" id="W1J-xX-cHP"/>
+                            <constraint firstItem="ax1-lS-1HL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bei-E4-yqK"/>
+                            <constraint firstAttribute="trailing" secondItem="GdG-Gt-tFd" secondAttribute="trailing" id="bnv-Uo-zOC"/>
+                            <constraint firstItem="8Gv-dd-Vc0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="eOw-3H-szQ"/>
+                            <constraint firstItem="ax1-lS-1HL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="92" id="gXa-fQ-Kjs"/>
+                            <constraint firstItem="ug2-TF-UTT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSn-UA-mvL"/>
+                            <constraint firstItem="aK1-zc-jiV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nFF-mb-fee"/>
+                            <constraint firstItem="GdG-Gt-tFd" firstAttribute="top" secondItem="7Ma-Pp-Fuf" secondAttribute="bottom" constant="20" id="qhh-G3-gey"/>
+                            <constraint firstItem="He1-C0-Z3Y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="ujU-r5-pfj"/>
+                            <constraint firstItem="He1-C0-Z3Y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="5" id="xiJ-wJ-xXt"/>
+                            <constraint firstItem="8Gv-dd-Vc0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-63" id="z9r-Xm-3DA"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="chokiButton" destination="8Gv-dd-Vc0" id="BRl-IJ-XwF"/>
+                        <outlet property="chokiButton" destination="ax1-lS-1HL" id="VbU-W0-EXu"/>
+                        <outlet property="chokiSelect" destination="He1-C0-Z3Y" id="4Ic-4C-vBr"/>
+                        <outlet property="explane" destination="GdG-Gt-tFd" id="Cbg-Vg-KFy"/>
                         <outlet property="guButton" destination="pcH-7H-qcF" id="1Ds-Bi-9P3"/>
-                        <outlet property="parButton" destination="ax1-lS-1HL" id="lQe-aX-yU6"/>
-                        <outlet property="segmentControl" destination="47s-ya-IQh" id="lQK-lS-eTE"/>
+                        <outlet property="guSelect" destination="n2y-LS-VhW" id="fHE-Nt-Szi"/>
+                        <outlet property="mahoujinImage" destination="ug2-TF-UTT" id="57f-Jf-ZKl"/>
+                        <outlet property="palyer1Button" destination="XBr-Wm-Svr" id="Bjm-Uk-OJv"/>
+                        <outlet property="palyer2Button" destination="Xpz-xw-v2o" id="PSL-a2-THF"/>
+                        <outlet property="parButton" destination="8Gv-dd-Vc0" id="cb4-nb-1fm"/>
+                        <outlet property="parSelect" destination="bvV-ge-V6X" id="IkK-Rz-s80"/>
+                        <outlet property="startingImage" destination="YMb-mk-5Bs" id="yfy-iB-6C4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="300" y="173"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="zOs-kb-lVd">
+            <objects>
+                <viewController id="BHf-54-pjH" customClass="TestViewController" customModule="じゃん拳魔法" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HYb-De-EVF"/>
+                        <viewControllerLayoutGuide type="bottom" id="ChS-qq-h2U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nyd-9q-e8G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9SC-ad-g0o">
+                                <rect key="frame" x="36" y="66" width="342" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-06-OFk">
+                                <rect key="frame" x="340" y="138" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7uT-ok-fFg"/>
+                                    <constraint firstAttribute="height" constant="30" id="g3G-bW-Sq9"/>
+                                </constraints>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="dicede" destination="BHf-54-pjH" eventType="touchUpInside" id="wey-n2-VkW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnY-UT-bfS">
+                                <rect key="frame" x="55" y="214" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Dyb-Et-UiR"/>
+                                    <constraint firstAttribute="height" constant="30" id="IMO-dE-VZ3"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="modoru" destination="BHf-54-pjH" eventType="touchUpInside" id="Mix-ps-7pJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9SC-ad-g0o" secondAttribute="trailing" constant="16" id="G7W-UE-uaZ"/>
+                            <constraint firstItem="9SC-ad-g0o" firstAttribute="top" secondItem="HYb-De-EVF" secondAttribute="bottom" constant="46" id="KQU-5z-RAc"/>
+                            <constraint firstItem="9SC-ad-g0o" firstAttribute="leading" secondItem="Nyd-9q-e8G" secondAttribute="leadingMargin" constant="16" id="SyG-o2-z5v"/>
+                            <constraint firstItem="Fv9-06-OFk" firstAttribute="top" secondItem="9SC-ad-g0o" secondAttribute="bottom" constant="42" id="V9b-hv-nzg"/>
+                            <constraint firstItem="BnY-UT-bfS" firstAttribute="leading" secondItem="Nyd-9q-e8G" secondAttribute="leadingMargin" constant="35" id="XIh-9t-vTE"/>
+                            <constraint firstItem="BnY-UT-bfS" firstAttribute="top" secondItem="9SC-ad-g0o" secondAttribute="bottom" constant="118" id="h7W-Im-uJX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fv9-06-OFk" secondAttribute="trailing" constant="24" id="qvr-rK-ZMr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="text" destination="9SC-ad-g0o" id="frv-0r-XOp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNH-JB-8Po" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="105"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="icon_choki" width="1000" height="1000"/>
-        <image name="icon_goo" width="1000" height="1000"/>
-        <image name="icon_per" width="1000" height="1000"/>
+        <image name="bg" width="525" height="525"/>
+        <image name="btn_close" width="160" height="160"/>
+        <image name="btn_player1_on" width="190" height="68"/>
+        <image name="btn_player2_off" width="190" height="68"/>
+        <image name="choki" width="162" height="224"/>
+        <image name="goo" width="180" height="180"/>
+        <image name="par" width="234" height="216"/>
+        <image name="select" width="308" height="306"/>
+        <image name="startimg" width="443" height="495"/>
     </resources>
 </document>
