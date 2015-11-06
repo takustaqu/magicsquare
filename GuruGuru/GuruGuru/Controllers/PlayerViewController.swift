@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AVFoundation
+import AudioToolbox
 
 class PlayerViewController: UIViewController{
     
@@ -90,6 +91,7 @@ class PlayerViewController: UIViewController{
                     .responseJSON { response in
                         print("\(response)")
                 }
+                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
             
             if(self.commandString == "open")
