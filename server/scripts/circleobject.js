@@ -107,10 +107,10 @@ $(function(){
 	function setHandType(target,alias){
 		if(!!alias){
 			$squares[parseInt(target)].removeClass("goo choki par").addClass(alias);
-			console.log($players[parseInt(target)].find(".hand."+alias));	
+			console.log($players[parseInt(target)].find(".hand."+alias));
 			$players[parseInt(target)].find(".hand."+alias).css("opacity",1)
 		}else{
-			$squares[parseInt(target)].removeClass("goo choki par");
+			$squares[parseInt(target)].removeClass("goo").removeClass("choki").removeClass("par");
 			$players[parseInt(target)].find(".hand").animate({"opacity":0},100);
 		}
 	}
