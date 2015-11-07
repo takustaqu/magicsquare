@@ -294,6 +294,7 @@
 				TargetAttributes = {
 					40294ADC1BDB47A10005DFBE = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 96A372G96Q;
 					};
 					40294AF01BDB47A10005DFBE = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -564,11 +565,14 @@
 			baseConfigurationReference = 483F4B249FEC10982EEECE0A /* Pods-GuruGuru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GuruGuru/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuru;
 				PRODUCT_NAME = "じゃん拳魔法";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -577,11 +581,14 @@
 			baseConfigurationReference = EB53BCDF61B38497575B7818 /* Pods-GuruGuru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GuruGuru/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = none.GuruGuru;
 				PRODUCT_NAME = "じゃん拳魔法";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
