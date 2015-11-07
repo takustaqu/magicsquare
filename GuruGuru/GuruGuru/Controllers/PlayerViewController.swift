@@ -13,7 +13,7 @@ import AudioToolbox
 
 class PlayerViewController: UIViewController{
     
-    private let URI = "http://yamamac.local:3000/api"
+    private let URI = "http://magicrune.cloudapp.net/api"
     
     @IBOutlet weak private var guButton : UIButton!
     @IBOutlet weak private var chokiButton : UIButton!
